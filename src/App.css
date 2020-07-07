@@ -1,6 +1,8 @@
 @import '~antd/dist/antd.css';
 .App {
   text-align: center;
+  background-color: #AF6BF5;
+  height: 100%;
 }
 
 .App-logo {
@@ -36,4 +38,17 @@
   to {
     transform: rotate(360deg);
   }
+}
+/*登录页头部样式*/
+.ant-layout-header{
+  background-color: #AF6BF5;
+  margin-bottom: 100px;
+}
+/*登录页内容*/
+.ant-layout-content{
+  background-color: #AF6BF5;
+}
+/*登录页尾部*/
+.ant-layout-footer{
+  background-color: #AF6BF5;
 }

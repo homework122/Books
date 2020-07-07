@@ -1,0 +1,14 @@
+
+.ant-layout{
+    background-color: #AF6BF5;
+}
+/*表单样式开始*/
+.ant-layout-content>form{
+    width: 50%;
+    margin: 0 auto;
+    border: 1px solid #FFFAAA;
+    border-radius: 10px;
+    /*box-shadow: 5px 5px 1px #FFF88A;*/
+    padding: 50px;
+}
+/*表单样式结束*/
