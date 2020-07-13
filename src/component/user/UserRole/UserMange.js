@@ -215,7 +215,7 @@ class RoleMange extends React.Component {
           console.log('修改返回',res);
           if(res.data.code == 200){
             console.log('hshshhhsshhs')
-            message.success(res.data.msg)
+   
             that.getAllData()
           }
         }).catch((err)=>{
@@ -315,7 +315,6 @@ class RoleMange extends React.Component {
       role_no:parseInt(userRole),
     }).then((res)=>{
       console.log('添加',res);
-      message.success(res.data.msg)
       if(res.data.code == 200){
         //重新请求数据
         this.getAllData();
@@ -346,7 +345,6 @@ class RoleMange extends React.Component {
     }).then((res) => {
       if(res.data.code == 200){
         this.getAllData()
-        message.success(res.data.msg)
       }
     }).catch((err) => {
       console.log('状态改变出错',err)

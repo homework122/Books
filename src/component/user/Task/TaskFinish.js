@@ -48,7 +48,6 @@ class TaskList extends React.Component {
           data:res.data.data,
           count:res.data.count
         })
-        this.success(res.data.msg)
       }else {
         this.error('加载出错')
       }

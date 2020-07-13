@@ -28,16 +28,12 @@ class ChangeCode extends React.Component {
             pageSize:this.state.pagesize
         })
             .then((res)=>{
-                console.log('积分00000',res)
                 if(res.data.code===200){
-                    console.log('积分',res.data.count)
                     this.setState({
                         data : res.data.data,
                         total:res.data.count
                     })
                     // window.location.reload()
-                    message.success(res.data.message)
-                    console.log('获取成功')
                 }else{
                     console.log('获取失败')
                 }
@@ -70,7 +66,6 @@ class ChangeCode extends React.Component {
                     total:res.data.count
                 })
                 // window.location.reload()
-                message.success('查询成功')
 
             }else{
                 console.log('获取失败')
@@ -98,7 +93,6 @@ class ChangeCode extends React.Component {
                     console.log(res)
                     console.log('删除成功',res)
                     window.location.reload()
-                    message.success(res.data.message)
                 }).catch((err)=>{
                     console.log(err)
                     console.log('出错')

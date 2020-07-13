@@ -24,7 +24,7 @@ var imgurl
 
 const props = {
   name: 'file',
-  action: 'http://www.xiadachuan.cn:8082/uploadfile.do',
+  action: 'http://www.xiadachuan.cn/uploadfile.do',
   headers: {
     // authorization: 'authorization-text',
   },

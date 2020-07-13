@@ -52,7 +52,6 @@ axios=()=>{
                     total:res.data.count
                 })
                 // window.location.reload()
-                message.success(res.data.message)
                 console.log('获取成功')
             }else{
                 console.log('获取失败')
@@ -144,7 +143,6 @@ axios=()=>{
                     total:res.data.count
                 })
                 // window.location.reload()
-                message.success(res.data.message)
 
             }else{
                 console.log('获取失败')
@@ -207,7 +205,6 @@ axios=()=>{
             console.log(res)
             console.log('成功')
             // window.location.reload()
-            message.success(res.data.message)
         }).catch((err)=>{
             console.log(err)
             console.log('出错')

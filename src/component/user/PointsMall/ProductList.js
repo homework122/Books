@@ -42,7 +42,6 @@ class ProductList extends React.Component {
                 this.setState({
                     data:res.data.data
                 })
-                this.success(res.data.msg)
             }else {
                 this.error('加载出错')
             }
@@ -77,7 +76,6 @@ class ProductList extends React.Component {
                 this.setState({
                   dataUp:res.data.data
                 })
-                this.success(res.data.msg)
             }else {
                 this.error('加载出错')
             }
@@ -133,7 +131,6 @@ class ProductList extends React.Component {
           vip_itg:parseInt(values.vip_itg),
         }).then((res)=>{
             if (res.data.code==200){
-                this.success(res.data.msg)
                 window.location.reload()
             }else{
     
@@ -336,7 +333,7 @@ class ProductList extends React.Component {
                         >
                             <Form
                                 style={{marginLeft:'-12px'}}
-                                labelCol={{ span: 10 }}
+                                labelCol={{ span: 6 }}
                                 wrapperCol={{ span: 14 }}
                                 layout="horizontal"
                                 onFinish={this.onFinish}

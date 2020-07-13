@@ -36,7 +36,7 @@ class TxtList extends Component {
             Specific: '', // 详情
             props: {
                 name: 'file',
-                action: 'http://172.16.6.11:777/uploadfile.do',
+                action: 'http://www.xiadachuan.cn/uploadfile.do',
                 headers: {
                     // authorization: 'authorization-text',
                 },
