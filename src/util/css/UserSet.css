@@ -1,0 +1,85 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+.grade{
+    margin:100px;
+    border-radius: 5px;
+    /*border: 1px solid silver;*/
+    width: auto;
+    height: 700px;
+    padding: 100px;
+    box-shadow:0 0 10px 5px rgba(111, 111, 111, 0.83),
+        0 0 10px 20px #bcbcbc;
+}
+.col3 div{
+    margin-bottom: 50px;
+}
+.col3 div>span{
+    display: inline-block;
+    /*margin-top: 20px;*/
+    margin-bottom: 20px;
+    margin-right: 10px;
+}
+.cont .ant-col {
+    text-align: center !important;
+    height: 60px;
+    line-height: 60px;
+    /*border: grey 1px solid;*/
+    padding-bottom: 69px;
+}
+.cont .ant-col:nth-child(2n){
+    font-weight: 600;
+}
+.cont .ant-col:nth-child(2n+1){
+    /*background-color: rgba(232, 232, 232, 0.53);*/
+}
+.tu{
+    position: relative;
+    /*border: grey 1px solid;*/
+    height: 284px;
+    padding-top: 30px;
+    text-align: center;
+}
+.tu div{
+    text-align: center !important;
+    height: 30px;
+}
+.tu>div:nth-child(3){
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+.tu>div:nth-child(4){
+    background-color:green;
+    margin-left: 40%;
+    margin-right: 40%;
+    color: white;
+    border-radius: 3px;
+}
+.tongji{
+    margin-top: 25%;
+    margin-bottom: 25%;
+}
+.tongji table{
+    margin-top: 30px;
+
+}
+.tongji table th{
+    background-color: #f3f3f3;
+    border: 1px solid grey;
+    text-align: center;
+    padding: 20px;
+}
+.tongji table td{
+    border: 1px solid grey;
+    text-align: center;
+    padding: 20px;
+}
+.leibiao{
+    text-align: center !important;
+    margin-left: 25%;
+    margin-right: 25%;
+
+}

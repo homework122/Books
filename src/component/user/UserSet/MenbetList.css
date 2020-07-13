@@ -1,0 +1,94 @@
+.query Input{
+    width: 250px;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+.query {
+   text-align: left;
+    margin-left: 20px;
+}
+.query Button{
+    margin-left: 180px;
+}
+.row{
+    margin-top: 10px;
+    background-color: rgba(220, 220, 220, 0.38);
+    line-height: 60px;
+    height: 60px;
+}
+.col3{
+    text-align: right;
+
+}
+.col3 div{
+    margin-bottom: 50px;
+}
+.col3 div>span{
+    display: inline-block;
+    /*margin-top: 20px;*/
+    margin-bottom: 20px;
+    margin-right: 10px;
+}
+.col3 Input{
+    width: 250px;
+}
+.cont{
+    text-align: center;
+    height: 30px;
+    line-height: 30px;
+    border: none;
+
+}
+ .cont .ant-col {
+     text-align: center !important;
+     height: 60px;
+     line-height: 60px;
+     border: grey 1px solid;
+     padding-bottom: 69px;
+ }
+.cont .ant-col:nth-child(2n){
+    font-weight: 600;
+}
+.cont .ant-col:nth-child(2n+1){
+    background-color: rgba(232, 232, 232, 0.53);
+}
+.tu{
+    position: relative;
+    border: grey 1px solid;
+    margin-top: 10px;
+    height: 280px;
+    padding-top: 30px;
+    text-align: center;
+
+}
+.tu>div{
+    text-align: center !important;
+    height: 30px;
+
+}
+.tu>div:nth-child(4){
+    background-color:green;
+    margin-left: 70px;
+    margin-right: 70px;
+    color: white;
+    border-radius: 3px;
+}
+.tongji{
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+.tongji table{
+    margin-top: 30px;
+
+}
+.tongji table th{
+    background-color: #f3f3f3;
+    border: 1px solid grey;
+    text-align: center;
+    padding: 20px;
+}
+.tongji table td{
+    border: 1px solid grey;
+    text-align: center;
+    padding: 20px;
+}

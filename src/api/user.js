@@ -1,3 +1,3 @@
 export default{
-  userLogin:'/user/login'
+  userLogin:'/mgr/login.do'
 }//用户登录接口

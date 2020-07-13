@@ -1,18 +1,20 @@
 // 登录页
 import React, { Component } from 'react';
 import { Layout } from 'antd';
-import { Form, Input, Button, Checkbox } from 'antd';
+import { Form, Input, Button, Checkbox,message } from 'antd';
+import {inject,observer} from "mobx-react";
 import '../util/css/Login.css'
 const { Header, Footer, Content } = Layout;
+//style
+@inject('user')
+@observer
 class Login extends Component {
-
   constructor(props) {
     super(props);
     this.state = {  }
   }
   // 重置表单
   render() {
-
     const layout = {
       labelCol: {
         span: 8,
@@ -28,12 +30,16 @@ class Login extends Component {
       },
     };
     const onFinish = values => {
-      console.log('Success:', values);
+      // console.log('Success:', values);
       // 获取到数据后需要将值提到服务器端进行判断
-      this.props.user.login().then((data)=>{
+      // 获取用户名和密码的值，并将值传递过去
+      // console.log(values.username);
+      // console.log(values.password);
+      this.props.user.login(values.username,values.password).then((data)=>{
         console.log(data);
         // 登录成功跳转页面
-        this.props.history.push('/index')
+        this.props.history.push('/index/sysIndex/userTotal')
+        message.success(data)
       }).catch((err)=>{
         console.log(err);
       })
@@ -42,11 +48,11 @@ class Login extends Component {
       console.log('Failed:', errorInfo);
     };
     return (
-        <Layout>
-          <Header>
+        <Layout  className='loginContent'>
+          <Header style={{background:'none'}} className='loginHead'>
             <h1>七猫小说后台管理系统</h1>
           </Header>
-          <Content className='loginContent'>
+          <Content className='formBox'>
             <Form
                 {...layout}
                 name="basic"
@@ -66,7 +72,7 @@ class Login extends Component {
                     },
                   ]}
               >
-                <Input />
+                <Input ref="userInput"/>
               </Form.Item>
 
               <Form.Item
@@ -79,7 +85,7 @@ class Login extends Component {
                     },
                   ]}
               >
-                <Input.Password />
+                <Input.Password ref="pwdInput"/>
               </Form.Item>
 
               <Form.Item {...tailLayout} name="remember" valuePropName="checked">

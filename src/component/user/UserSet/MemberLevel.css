@@ -1,0 +1,46 @@
+.col{
+   margin-top: 50px;
+   margin-bottom: -150px;
+}
+.col div{
+   /*border: solid 1px red;*/
+   margin-bottom: 40px;
+   /*margin-top: 20px;*/
+   text-align: right;
+}
+.col span{
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 50px;
+    line-height: 20px;
+ }
+.radio span{
+   margin-bottom: -30px;
+    margin-right: 40px;
+   line-height: 20px;
+   box-sizing: border-box;
+}
+.col input{
+   width: 250px;
+}
+
+.col2 span{
+   margin-bottom: 120px;
+}
+.col2 TextArea{
+   width: 280px;
+}
+.col2 .avatar-uploader > .ant-upload {
+   width: 200px;
+   height: 108px;
+   margin-left: 40px;
+   margin-top: 20px;
+}
+.col2 .ant-upload-text{
+   text-align: center;
+   line-height: initial;
+}
+.cont{
+  padding: 10px;
+  border: 1px solid rgba(255, 15, 29, 0.24);
+}

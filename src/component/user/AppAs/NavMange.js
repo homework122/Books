@@ -14,7 +14,7 @@ const { RangePicker } = DatePicker;
 const { TextArea } = Input;
 const ImgProps = {
     name: 'file',
-    action: 'http://www.xiadachuan.cn:8082/uploadfile.do',
+    action: 'http://172.16.6.16:8888/uploadfile.do',
     headers: {
       // authorization: 'authorization-text',
     },
@@ -59,7 +59,7 @@ class Test extends React.Component {
     }
     componentDidMount() {
       
-        axios.post(Api.url.navList,{
+        axios.post(Api.user.navList,{
             page: this.state.page,
             pagesize:this.state.pagesize
 
@@ -151,7 +151,7 @@ class Test extends React.Component {
             nav_sort:values.nav_sort,
             nav_display:this.state.nav_display
         }
-        axios.post(Api.url.editNav,obj).then((res)=>{
+        axios.post(Api.user.editNav,obj).then((res)=>{
             if (res.data.code==200){
                 this.success(res.data.msg)
                 // window.sessionStorage.removeItem('imgUrl')
@@ -183,7 +183,7 @@ class Test extends React.Component {
             cancelText: '取消',
             // 点击确认触发
             onOk() {
-                axios.post(Api.url.delNav,{
+                axios.post(Api.user.delNav,{
                     nav_no:no,
                 }).then((res)=>{
                     window.location.reload()
@@ -201,7 +201,7 @@ class Test extends React.Component {
     // 滑块
     handleSetStatus=(checked, record)=>{
         let st = checked ? 1 : 0
-        axios.post(Api.url.displayNav,{
+        axios.post(Api.user.displayNav,{
             nav_no: record.nav_no,
             nav_display:st
 
@@ -222,7 +222,7 @@ class Test extends React.Component {
         let nav_position = values.nav_position
         let nav_icon =  ImgUrl
         let navObj = {nav_name,nav_position,nav_icon} 
-        axios.post(Api.url.addNav,navObj).then((res)=>{
+        axios.post(Api.user.addNav,navObj).then((res)=>{
             if (res.data.code==200){
                 this.success('添加成功')
                 console.log(res)

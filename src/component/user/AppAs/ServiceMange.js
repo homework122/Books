@@ -14,7 +14,7 @@ const { RangePicker } = DatePicker;
 const { TextArea } = Input;
 const ImgProps = {
     name: 'file',
-    action: 'http://www.xiadachuan.cn:8082/uploadfile.do',
+    action: 'http://172.16.6.16:8888/uploadfile.do',
     headers: {
       // authorization: 'authorization-text',
     },
@@ -59,7 +59,7 @@ class ServiceMange extends React.Component {
         }
     }
     componentDidMount() {
-        axios.post(Api.url.serviceList,{
+        axios.post(Api.user.serviceList,{
             page: this.state.page,
             pagesize:this.state.pagesize
 
@@ -136,7 +136,7 @@ class ServiceMange extends React.Component {
         console.log(values)
         let wait_logo=ImgUrl!=''?ImgUrl:values.wait_logo
         console.log(values)
-        axios.post(Api.url.editService,{
+        axios.post(Api.user.editService,{
             wait_no: values.wait_no,
             wait_name: values.wait_name,
             wait_logo:wait_logo,
@@ -171,7 +171,7 @@ class ServiceMange extends React.Component {
     //         cancelText: '取消',
     //         // 点击确认触发
     //         onOk() {
-    //             axios.post(Api.url.delNav,{
+    //             axios.post(Api.user.delNav,{
     //                 nav_no:no,
     //             }).then((res)=>{
     //                 window.location.reload()
@@ -190,7 +190,7 @@ class ServiceMange extends React.Component {
     handleSetStatus=(checked, record)=>{
         let st = checked ? 1 : 0
         console.log(checked)
-        axios.post(Api.url.delService,{
+        axios.post(Api.user.delService,{
             wait_no: record.wait_no,
             wait_isup:st
         }).then((res)=>{
@@ -207,7 +207,7 @@ class ServiceMange extends React.Component {
     // 添加
     onAddFinish = values => {
         console.log(values);
-        axios.post(Api.url.addService,values).then((res)=>{
+        axios.post(Api.user.addService,values).then((res)=>{
             if (res.data.code==200){
                 this.success('添加成功')
                 console.log(res)
@@ -284,8 +284,8 @@ class ServiceMange extends React.Component {
         return (
             <div>
                 <Row>
-                    <Col span={24}>
-                        <Button type="primary" onClick={this.showModal}>添加</Button>
+                    <Col span={2} offset={22}>
+                        <Button type="primary" onClick={this.showModal} className='btnMgBottom'>添加</Button>
                         {/*添加弹框*/}
                         <Modal
                             visible={visible}
@@ -314,13 +314,13 @@ class ServiceMange extends React.Component {
                            <Input  placeholder="large size"/>
                        </Form.Item>
                       
-                                <Form.Item style={{margin:'20px 0 0 120px '}} >
-                                    <Button key="back" onClick={this.handleCancel}>
+                                <Form.Item  style={{margin:'20px 0 0 120px'}}>
+                                    <Button key="back" onClick={this.handleCancel } className='btnMgRight'>
                                         取消
-                                    </Button>,
+                                    </Button>
                                     <Button key="submit" type="primary" htmlType="submit"  onClick={this.handleOk}>
                                         提交
-                                    </Button>,
+                                    </Button>
                                 </Form.Item>
 
                             </Form>
@@ -373,8 +373,8 @@ class ServiceMange extends React.Component {
                        {/* <Form.Item name='nav_sort' label="排序号">
                            <Input  placeholder="large size"/>
                        </Form.Item> */}
-                                <Form.Item style={{margin:'20px 0 0 120px '}} >
-                                    <Button key="back" onClick={this.handleCancel}>
+                                <Form.Item style={{margin:'20px 0 0 120px'}} >
+                                    <Button key="back" onClick={this.handleCancel} className='btnMgRight'>
                                         取消
                                     </Button>
                                     <Button key="submit" type="primary" htmlType="submit"  onClick={this.handleOk}>

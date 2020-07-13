@@ -1,0 +1,38 @@
+
+/*首页头部样式*/
+.indexHead{
+    background-color: #61dafb;
+    color: white;
+}
+.contentColor{
+    /*background-color: rgba(238,215,215,.1)*/
+    background-color: #ABEAFD;
+}
+/*会员总览样式*/
+.userTotal{
+    margin-top: 20px;
+}
+.userTotal .borderBox{
+    color: #dcdcdc;
+    font-size: 18px;
+    /*border: 1px solid yellow;*/
+    padding: 5px;
+    /*background-color: rgba(47, 84, 235, 0.4);*/
+    border-radius: 3px;
+    /*box-shadow: 10px 10px #ABEAFD;*/
+    /*box-shadow:0 0 10px 5px rgba(111, 111, 111, 0.38),*/
+    /*0 0 10px 5px #ABEAFD*/
+    background-image: linear-gradient(to right ,#83bff6, #2378f7);
+
+}
+
+/*左边菜单*/
+
+.menuBox{
+    height: 100%;
+    borde-right:0;
+    background-color:#61dafb
+}
+.loginOut:hover{
+    cursor: pointer;
+}

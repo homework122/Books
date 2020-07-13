@@ -30,7 +30,7 @@ class ProductList extends React.Component {
         }
     }
     componentDidMount() {
-        axios.post(Api.url.goodsList,
+        axios.post(Api.user.goodsList,
        
           {
             "page":this.state.page,
@@ -65,7 +65,7 @@ class ProductList extends React.Component {
         this.setState({
             visible: true,
         });
-        axios.post(Api.url.checkGoods,
+        axios.post(Api.user.checkGoods,
        
           {
             "page":this.state.page,
@@ -128,7 +128,7 @@ class ProductList extends React.Component {
         //     vip_no: values.vip_no,
         //     vip_itg:values.vip_itg,
         // }
-        axios.post(Api.url.editGoods,{
+        axios.post(Api.user.editGoods,{
           vip_no: values.vip_no,
           vip_itg:parseInt(values.vip_itg),
         }).then((res)=>{
@@ -152,7 +152,7 @@ class ProductList extends React.Component {
     }
     delUp(text,record,index){
       console.log(record.vip_no)
-      axios.post(Api.url.addGoods,{
+      axios.post(Api.user.addGoods,{
         vip_no:[parseInt(record.vip_no)],
     }).then((res)=>{
       console.log(res)
@@ -172,7 +172,7 @@ class ProductList extends React.Component {
             cancelText: '取消',
             // 点击确认触发
             onOk() {
-                axios.post(Api.url.delGoods,{
+                axios.post(Api.user.delGoods,{
                     vip_no:no,
                 }).then((res)=>{
                     window.location.reload()
@@ -190,7 +190,7 @@ class ProductList extends React.Component {
     // 滑块
     handleSetStatus=(checked, record)=>{
         let st = checked ? 1 : 0
-        axios.post(Api.url.displayNav,{
+        axios.post(Api.user.displayNav,{
             vip_no: record.vip_no,
             nav_display:st
 
