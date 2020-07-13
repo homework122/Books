@@ -29,7 +29,7 @@ export default {
     addGoods:'/integral/addGoods.do',//添加商品
     exchangeList:'/integral/exchangeList.do',//兑换记录
     delExchange:'/integral/ delExchangeList.do',//删除记录
-    
+    checkGoods:'/integral/clickAddGoods.do',
   //会员等级设置
   Membership:'/huiyuan/selectAllVip.do',
   //会员等级设置添加

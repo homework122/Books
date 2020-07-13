@@ -66,7 +66,7 @@ class ProductList extends React.Component {
             visible: true,
         });
         axios.post(Api.user.checkGoods,
-       
+
           {
             "page":this.state.page,
             "pageSize":this.state.pagesize
@@ -166,7 +166,7 @@ class ProductList extends React.Component {
     showDeleteConfirm(no) {
         console.log(no)
         confirm({
-            title: '是否确认删除?',
+            title: '是否确认下架?',
             okText: '确认',
             okType: 'danger',
             cancelText: '取消',
@@ -315,12 +315,12 @@ class ProductList extends React.Component {
         return (
             <div>
                 <Row>
-                    <Col span={24}>
-                        <Button type="primary" onClick={this.showModal}>添加</Button>
+                <Col span={2} offset={22}>
+                        <Button type="primary" onClick={this.showModal} className='btnMgBottom'>添加</Button>
                         {/*添加弹框*/}
                         <Modal
                             visible={visible}
-                            title="添加导航信息"
+                            title="添加上架信息"
                             onCancel={this.hideModal}
                             footer={null}
 
@@ -336,7 +336,7 @@ class ProductList extends React.Component {
                         >
                             <Form
                                 style={{marginLeft:'-12px'}}
-                                labelCol={{ span: 6 }}
+                                labelCol={{ span: 10 }}
                                 wrapperCol={{ span: 14 }}
                                 layout="horizontal"
                                 onFinish={this.onFinish}

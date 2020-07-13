@@ -303,8 +303,8 @@ class Test extends React.Component {
         return (
             <div>
                 <Row>
-                    <Col span={24}>
-                        <Button type="primary" onClick={this.showModal}>添加</Button>
+                <Col span={2} offset={22}>
+                        <Button type="primary" onClick={this.showModal} className='btnMgBottom'>添加</Button>
                         {/*添加弹框*/}
                         <Modal
                             visible={visible}

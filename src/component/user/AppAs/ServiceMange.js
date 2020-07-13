@@ -14,7 +14,7 @@ const { RangePicker } = DatePicker;
 const { TextArea } = Input;
 const ImgProps = {
     name: 'file',
-    action: 'http://172.16.6.16:8888/uploadfile.do',
+    action: 'http://www.xiadachuan.cn/uploadfile.do',
     headers: {
       // authorization: 'authorization-text',
     },
@@ -69,7 +69,6 @@ class ServiceMange extends React.Component {
                 this.setState({
                     data:res.data.data
                 })
-                this.success(res.data.msg)
             }else {
                 this.error('加载出错')
             }
@@ -145,7 +144,6 @@ class ServiceMange extends React.Component {
             wait_isup:this.state.wait_isup
         }).then((res)=>{
             if (res.data.code==200){
-                this.success(res.data.msg)
                 window.location.reload()
             }else{
                 window.location.reload()
@@ -209,7 +207,6 @@ class ServiceMange extends React.Component {
         console.log(values);
         axios.post(Api.user.addService,values).then((res)=>{
             if (res.data.code==200){
-                this.success('添加成功')
                 console.log(res)
                 window.location.reload()
             }

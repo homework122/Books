@@ -73,7 +73,6 @@ class MemberLevel extends React.Component {
                     data:[...this.state.data,res.data]
                 })
                 window.location.reload()
-                message.success(res.data.message)
             }).catch((err)=>{
                 console.log(err)
                 console.log('出错')
@@ -135,7 +134,6 @@ class MemberLevel extends React.Component {
                 }) .then((res)=>{
                     console.log('删除成功')
                     window.location.reload()
-                    message.success(res.data.message)
                 }).catch((err)=>{
                     console.log(err)
                     console.log('出错')
@@ -336,7 +334,7 @@ class MemberLevel extends React.Component {
                                             listType="picture-card"
                                             className="avatar-uploader"
                                             showUploadList={false}
-                                            action="http://172.16.6.11:777/uploadfile.do"
+                                            action="http://www.xiadachuan.cn/uploadfile.do"
                                             beforeUpload={this.beforeUpload}
                                             onChange={this.handleChange}
                                         >
