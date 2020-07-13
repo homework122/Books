@@ -1,4 +1,4 @@
-import user from './user'
+import url from './url'
 export default {
-  user
+  url
 }

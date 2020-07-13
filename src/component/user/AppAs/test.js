@@ -3,41 +3,14 @@ import React from 'react'
 import { Table, Space,Button,Modal,Input, Form, Row, Col, Select, DatePicker, message,Switch } from 'antd';
 import axios from "../../../util/axios";
 import Api from '../../../api/index'
-import { Upload } from 'antd';
-import { UploadOutlined } from '@ant-design/icons';
 
-
-var ImgUrl=''
 const { confirm } = Modal;
 const { Option } = Select;
 const { RangePicker } = DatePicker;
 const { TextArea } = Input;
-const ImgProps = {
-    name: 'file',
-    action: 'http://www.xiadachuan.cn:8082/uploadfile.do',
-    headers: {
-      // authorization: 'authorization-text',
-    },
-    onChange (info) {
-        if (info.file.status !== 'uploading') {
-          console.log(info.file.response.newfilepath);
-         window.sessionStorage.setItem('imgUrl',info.file.response.newfilepath)
-        let imgUrl=info.file.response.newfilepath
-        ImgUrl=imgUrl
-        console.log(ImgUrl)
-         console.log(info.fileList)
-        }
-        if (info.file.status === 'done') {
-          message.success(`${info.file.name} file uploaded successfully`);
-        } else if (info.file.status === 'error') {
-          message.error(`${info.file.name} file upload failed.`);
-        }
-      }
-    
-  };
+
 
 class Test extends React.Component {
-    
     constructor(prors){
         super(prors)
         this.state={
@@ -47,19 +20,15 @@ class Test extends React.Component {
             data:[], //接收数据
             visible: false,
             upvisible: false,
-            nav_no:0,
-            nav_name:'',
-            nav_icon:'',
-            nav_link:'',
-            nav_position:'' ,
-            nav_sort:'',
-            nav_display:0,
-
+            wait_no:0,
+            wait_name:'',
+            wait_phone:'',
+            wait_desc:'',
+            wait_status:''
         }
     }
     componentDidMount() {
-      
-        axios.post(Api.url.navList,{
+        axios.post(Api.url.serviceList,{
             page: this.state.page,
             pagesize:this.state.pagesize
 
@@ -77,10 +46,7 @@ class Test extends React.Component {
             console.log(err)
         })
     }
-    getImgUrl=(url)=>{
-        this.state.nav_icon=url
-    }
-   
+
     // 错误提示
    error = (val) => {
         message.error(val);
@@ -125,41 +91,29 @@ class Test extends React.Component {
     update(text,record,index){
         this.setState({
             upvisible: true,
-            nav_no:record.nav_no,
-            nav_name:record.nav_name,
-            nav_icon:record.nav_icon,
-            nav_link:record.nav_link,
-            nav_position:record.nav_position,
-            nav_sort:record. nav_sort,
-            nav_display:record.nav_display,
+            wait_no:record.wait_no,
+            wait_name:record.wait_name,
+            wait_logo:record.wait_logo,
+            wait_phone:record.wait_phone,
+            wait_desc:record.wait_desc,
         });
     }
 
     // 获取编辑表单数据并发起请求
     onFinish = values => {
         console.log(values)
-        console.log(ImgUrl)
-        console.log(values.nav_icon)
-        let nav_icon=ImgUrl!=''?ImgUrl:values.nav_icon
-        console.log(nav_icon)
-        let obj ={
-            nav_no: this.state.nav_no,
-            nav_name: values.nav_name,
-            nav_icon: nav_icon,
-            nav_link:values.nav_link,
-            nav_position:this.state.nav_position,
-            nav_sort:values.nav_sort,
-            nav_display:this.state.nav_display
-        }
-        axios.post(Api.url.editNav,obj).then((res)=>{
+        axios.post(Api.url.editService,{
+            wait_no: values.wait_no,
+            wait_name: values.wait_name,
+            wait_logo:values. wait_logo,
+            wait_phone:values.wait_phone,
+            wait_desc:values.wait_desc,
+
+        }).then((res)=>{
             if (res.data.code==200){
                 this.success(res.data.msg)
-                // window.sessionStorage.removeItem('imgUrl')
-                // window.location.reload()
-                ImgUrl=''
-               
+                window.location.reload()
             }else{
-                window.sessionStorage.removeItem('imgUrl')
                 window.location.reload()
             }
         }).catch((err)=>{
@@ -169,44 +123,45 @@ class Test extends React.Component {
 
 
     // 删除
-    del(text,record,index){
-        console.log(record.nav_no)
-        this.showDeleteConfirm(record.nav_no)
-    }
-    // 删除弹框
-    showDeleteConfirm(no) {
-        console.log(no)
-        confirm({
-            title: '是否确认删除?',
-            okText: '确认',
-            okType: 'danger',
-            cancelText: '取消',
-            // 点击确认触发
-            onOk() {
-                axios.post(Api.url.delNav,{
-                    nav_no:no,
-                }).then((res)=>{
-                    window.location.reload()
-                    console.log(res)
-                }).catch((err)=>{
-                    console.log(err)
-                })
-            },
-            // 点击取消触发
-            onCancel() {
-                console.log('Cancel');
-            },
-        });
-    }
+    // del(text,record,index){
+    //     console.log(record.wait_no)
+    //     this.showDeleteConfirm(record.wait_no)
+    // }
+    // // 删除弹框
+    // showDeleteConfirm(no) {
+    //     console.log(no)
+    //     confirm({
+    //         title: '是否确认删除?',
+    //         okText: '确认',
+    //         okType: 'danger',
+    //         cancelText: '取消',
+    //         // 点击确认触发
+    //         onOk() {
+    //             axios.post(Api.url.delNav,{
+    //                 nav_no:no,
+    //             }).then((res)=>{
+    //                 window.location.reload()
+    //                 console.log(res)
+    //             }).catch((err)=>{
+    //                 console.log(err)
+    //             })
+    //         },
+    //         // 点击取消触发
+    //         onCancel() {
+    //             console.log('Cancel');
+    //         },
+    //     });
+    // }
     // 滑块
     handleSetStatus=(checked, record)=>{
         let st = checked ? 1 : 0
-        axios.post(Api.url.displayNav,{
-            nav_no: record.nav_no,
-            nav_display:st
-
+        console.log(checked)
+        axios.post(Api.url.delService,{
+            wait_no: record.wait_no,
+            wait_isup:st
         }).then((res)=>{
            console.log(res)
+           window.location.reload()
         }).catch((err)=>{
             console.log(err)
         })
@@ -218,15 +173,10 @@ class Test extends React.Component {
     // 添加
     onAddFinish = values => {
         console.log(values);
-        let nav_name =values.nav_name
-        let nav_position = values.nav_position
-        let nav_icon =  ImgUrl
-        let navObj = {nav_name,nav_position,nav_icon} 
-        axios.post(Api.url.addNav,navObj).then((res)=>{
+        axios.post(Api.url.addService,values).then((res)=>{
             if (res.data.code==200){
                 this.success('添加成功')
                 console.log(res)
-                ImgUrl=''
                 window.location.reload()
             }
             console.log(res)
@@ -240,59 +190,56 @@ class Test extends React.Component {
         const { visible} = this.state;
         const columns = [
             {
-                title: '导航编号',
-                dataIndex: 'nav_no',
-                key:'nav_no',
+                title: '客户Id',
+                dataIndex: 'wait_no',
             },
             {
-                title: '导航名称',
-                dataIndex: 'nav_name',
+                title: '客户名称',
+                dataIndex: 'wait_name',
                 width: 150,
-                key:'nav_name',
             },
             {
-                title: '导航图标',
-                dataIndex: 'nav_icon',
+                title: '头像',
+                dataIndex: 'wait_logo',
                 width: 150,
-                key:'nav_icon',
-                render:(r) =>{
-                    // for(let i=0 ;i<this.state.NavList.length;i++){
+                render:(r) => {
+
+                    // for(let i=0 ;i<this.state.ServiceList.length;i++){
                         return <img src={r} alt="" style={{width:'50px',height:'50px'}}/>}
-                // }
+                 
             },
-            // {
-            //     title: '是否显示',
-            //     dataIndex: 'nav_display',
-            // },
             {
-              title: '是否显示',
-              dataIndex: 'nav_display',
-              key:'nav_display',
-              render:(o,record,index) =>{
-                return(
-                  <Switch
-                  checkedChildren="ON"
-                  uncheckedchildren="OFF"
-                  defaultChecked={o}
-                  onClick={(checked)=>this.handleSetStatus(checked,record,index)}
-                  />
-                )
-              }
-          },
+                title: '微信号',
+                dataIndex: 'wait_phone',
+            },
             {
-                title: '放置位置',
-                dataIndex: 'nav_position',
-                key:'nav_position',
+                title: '客服介绍',
+                dataIndex: 'wait_desc',
+            },
+            {
+                title: '状态',
+                dataIndex: 'wait_isup',
+                key:'wait_isup',
+                render:(o,record,index) =>{
+                    console.log(o)
+                  return(
+                    <Switch
+                    checkedChildren="ON"
+                    uncheckedchildren="OFF"
+                    defaultChecked={o}
+                    onClick={(checked)=>this.handleSetStatus(checked,record,index)}
+                    />
+                  )
+                }
             },
             {
                 title: '操作',
                 dataIndex: 'address',
-                key:'address',
                 render: (text, record,index) => (
                     <Space size="middle">
                         <Button size='small' onClick={()=>this.update(text,record,index)} >编辑</Button>
 
-                        <Button type="primary" danger size='small' onClick={()=>this.del(text,record,index)}> 删除</Button>
+                        {/* <Button type="primary" danger size='small' onClick={()=>this.del(text,record,index)}> 删除</Button> */}
                     </Space>
                 )
             }
@@ -304,11 +251,11 @@ class Test extends React.Component {
             <div>
                 <Row>
                     <Col span={24}>
-                        <Button type="primary" onClick={this.showModal}>添加</Button>
+                        <Button type="primary" onClick={this.showModal}>添加任务</Button>
                         {/*添加弹框*/}
                         <Modal
                             visible={visible}
-                            title="添加导航信息"
+                            title="添加客服信息"
                             onCancel={this.hideModal}
                             footer={null}
 
@@ -320,22 +267,19 @@ class Test extends React.Component {
                                 layout="horizontal"
                                 onFinish={this.onAddFinish}
                             >
-                                <Form.Item name='nav_name' label="导航名称">
+                              <Form.Item name='wait_name' label="客服名称">
                            <Input  placeholder="large size"  />
                        </Form.Item>
-                       <Form.Item name='nav_icon' label="导航图标">
-                       <Upload {...ImgProps}>
-                        <Button>
-                        <UploadOutlined /> 请选择头像
-                        </Button>
-                         </Upload>,
+                       <Form.Item name='wait_logo' label="客服头像">
+                       <Input  placeholder="large size"  />
                        </Form.Item>
-                       {/* <Form.Item name='nav_link' label="链接地址">
+                       <Form.Item name='wait_phone' label="手机号">
                            <Input  placeholder="large size" />
-                       </Form.Item> */}
-                       <Form.Item name='nav_position' label="放置位置">
+                       </Form.Item>
+                       <Form.Item name='wait_desc' label="客服介绍">
                            <Input  placeholder="large size"/>
                        </Form.Item>
+                      
                                 <Form.Item style={{margin:'20px 0 0 120px '}} >
                                     <Button key="back" onClick={this.handleCancel}>
                                         取消
@@ -350,7 +294,7 @@ class Test extends React.Component {
                         {/*修改弹框*/}
                         <Modal
                             visible={this.state.upvisible}
-                            title="修改导航信息"
+                            title="修改客服信息"
                             footer={null}
                             onCancel={this.hideModal}
                         >
@@ -361,35 +305,35 @@ class Test extends React.Component {
                                 layout="horizontal"
                                 onFinish={this.onFinish}
                                 initialValues={{
-                                    nav_no: this.state.nav_no,
-                                    nav_name: this.state.nav_name,
-                                    nav_icon:this.state.nav_icon,
-                                    nav_link:this.state.nav_link,
-                                    nav_position:this.state.nav_position,
-                                    nav_sort:this.state.nav_sort,
-                                    nav_display:this.state.nav_display
+                
+                                    wait_name: this.state.wait_name,
+                                    wait_logo:this.state.wait_logo,
+                                    wait_phone:this.state.wait_phone,
+                                    wait_desc:this.state.wait_desc,
+                                    wait_no:this.state.wait_no
                                 }}
                             >
-                                 <Form.Item name='nav_no' label="导航ID">
+                                  <Form.Item name='wait_no' label="客服ID">
                            <Input  placeholder="large size" disabled="disabled" />
                        </Form.Item>
-                       <Form.Item name='nav_name' label="导航名字">
+                       <Form.Item name='wait_name' label="客服名称">
                            <Input  placeholder="large size"  />
                        </Form.Item>
-                       <Form.Item name='nav_icon' label="导航图标">
-                       <Upload {...ImgProps}>
-                        <Button>
-                        <UploadOutlined /> 请选择头像
-                        </Button>
-                         </Upload>,
+                       <Form.Item name='wait_logo' label="客服头像">
+                       <Input  placeholder="large size"  />
                        </Form.Item>
-                       <Form.Item name='nav_position' label="放置位置">
+                       <Form.Item name='wait_phone' label="手机号">
                            <Input  placeholder="large size" />
+                       </Form.Item>
+                       <Form.Item name='wait_desc' label="客服介绍">
+                           <Input  placeholder="large size"/>
                        </Form.Item>
                        {/* <Form.Item name='nav_display' label="是否显示">
                            <Input  placeholder="large size"/>
                        </Form.Item> */}
-
+                       {/* <Form.Item name='nav_sort' label="排序号">
+                           <Input  placeholder="large size"/>
+                       </Form.Item> */}
                                 <Form.Item style={{margin:'20px 0 0 120px '}} >
                                     <Button key="back" onClick={this.handleCancel}>
                                         取消

@@ -1,14 +1,14 @@
 @import '~antd/dist/antd.css';
-.App {
+/* .App {
   text-align: center;
   background-color: #AF6BF5;
   height: 100%;
-}
+} */
 
-.App-logo {
+/* .App-logo {
   height: 40vmin;
   pointer-events: none;
-}
+} */
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
