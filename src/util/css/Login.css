@@ -1,0 +1,21 @@
+
+.loginContent{
+    background-image: url("../img/login.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+}
+.loginHead{
+    margin-bottom: 100px;
+
+}
+/*表单样式开始*/
+.ant-layout-content>form{
+    width: 40%;
+    margin: 0 auto;
+    border: 1px solid #FFFAAA;
+    border-radius: 10px;
+    padding: 50px;
+   background-color: rgba(243,243,243,.3);
+}
+/*表单样式结束*/
