@@ -1,0 +1,113 @@
+/*2020-7-14*/
+.query1 Input{
+    width: 200px;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+.query1 {
+   text-align: left;
+    margin-left: 20px;
+}
+.query1 Button{
+    margin-left: 80px;
+}
+.row1{
+    margin-top: 10px;
+    background-color: rgba(220, 220, 220, 0.38);
+    line-height: 60px;
+    height: 60px;
+}
+.col34{
+    text-align: right;
+
+}
+.col34 div{
+    margin-bottom: 50px;
+}
+.col34 div>span{
+    display: inline-block;
+    /*margin-top: 20px;*/
+    margin-bottom: 20px;
+    margin-right: 10px;
+}
+.col34 Input{
+    width: 250px;
+}
+.cont2{
+    text-align: center;
+    border: none;
+
+}
+ .cont2 .ant-col {
+     text-align: center !important;
+     height: 60px;
+     line-height: 60px;
+     border: grey 1px solid;
+     padding-bottom: 69px;
+ }
+.cont2 .ant-col:nth-child(2n){
+    font-weight: 600;
+}
+.cont2 .ant-col:nth-child(2n+1){
+    background-color: rgba(232, 232, 232, 0.53);
+}
+.tut{
+    position: relative;
+    border: grey 1px solid;
+    /*2020-7-14*/
+    height: 284px;
+    /*2020-7-14*/
+    padding-top: 30px;
+    text-align: center;
+
+}
+.tut>div{
+    text-align: center !important;
+    height: 30px;
+    /*2020-7-14*/
+    margin: 20px;
+/*2020-7-14*/
+}
+.tut>div:nth-child(4){
+    background-color:green;
+    margin-left: 70px;
+    margin-right: 70px;
+    color: white;
+    border-radius: 3px;
+}
+.tongjie{
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+.tongjie table{
+    margin-top: 30px;
+
+}
+.tongjie table th{
+    background-color: #f3f3f3;
+    border: 1px solid grey;
+    text-align: center;
+    padding: 20px;
+}
+.tongjie table td{
+    border: 1px solid grey;
+    text-align: center;
+    padding: 20px;
+}
+.color1{
+    color:blue !important;
+    cursor: pointer;
+}
+/*2020-7-14*/
+.chaKan{
+    cursor: pointer;
+
+    font-size: 15px;
+}
+.chaKan:hover{
+    color: #2378f7;
+}
+.swi{
+    background-color: #61dafb;
+    color: white;
+}
