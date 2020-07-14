@@ -24,7 +24,11 @@ var imgurl
 
 const props = {
   name: 'file',
+<<<<<<< HEAD
     action: "http://www.xiadachuan.cn/uploadfile.do",
+=======
+  action: 'http://www.xiadachuan.cn/uploadfile.do',
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
   headers: {
     // authorization: 'authorization-text',
   },
@@ -162,15 +166,23 @@ class UserSet extends React.Component {
             <div className='leibiao'>
               <div>
                 <Row className='cont'>
+<<<<<<< HEAD
                   <Col span={6}>用户编号:</Col>
                   <Col span={6}>{this.state.list.mgr_no}</Col>
                   <Col span={6}>用户名字:</Col>
                   <Col span={6}>{this.state.list.mgr_name}</Col>
+=======
+                  <Col span={3}>用户编号:</Col>
+                  <Col span={9}>{this.state.list.mgr_no}</Col>
+                  <Col span={3}>用户名字:</Col>
+                  <Col span={9}>{this.state.list.mgr_name}</Col>
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
                 </Row>
               </div>
               <div>
                 <div>
                   <Row className='cont'>
+<<<<<<< HEAD
                     <Col span={6}>用户电话:</Col>
                     <Col span={6}>{this.state.list.mgr_call}</Col>
                     <Col span={6}>用户角色:</Col>
@@ -185,6 +197,22 @@ class UserSet extends React.Component {
                     {/*<Col span={9}>{this.state.list.mgr_pwd}</Col>*/}
                   {/*</Row>*/}
                 {/*</div>*/}
+=======
+                    <Col span={3}>用户电话:</Col>
+                    <Col span={9}>{this.state.list.mgr_call}</Col>
+                    <Col span={3}>用户角色:</Col>
+                    <Col span={9}>{this.state.list.role_no}</Col>
+                  </Row>
+                </div>
+                <div>
+                  <Row className='cont'>
+                    <Col span={3}>用户状态:</Col>
+                    <Col span={9}>{this.state.list.mgr_status}</Col>
+                    <Col span={3}>密码:</Col>
+                    <Col span={9}>{this.state.list.mgr_pwd}</Col>
+                  </Row>
+                </div>
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
               </div>
             </div>
           </div>

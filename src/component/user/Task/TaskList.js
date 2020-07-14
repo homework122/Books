@@ -5,7 +5,10 @@ import { Table, Space,Button,Modal,Input, Form, Row, Col, Select, DatePicker, me
 import moment from 'moment';
 import locale from 'antd/lib/date-picker/locale/zh_CN';
 import 'moment/locale/zh-cn'
+<<<<<<< HEAD
 import {UsergroupAddOutlined,EditOutlined,DeleteOutlined,CopyOutlined } from '@ant-design/icons';
+=======
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
 
 
 
@@ -38,7 +41,10 @@ class TaskList extends React.Component {
             task_time:[moment('', dateFormat)  ,moment('', dateFormat)] ,
             task_rules:'',
             task_isup:0,
+<<<<<<< HEAD
             istrue:false //修改弹框
+=======
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
 
         }
     }
@@ -69,7 +75,11 @@ class TaskList extends React.Component {
     success = (val) => {
         message.success(val);
     };
+<<<<<<< HEAD
      // 弹框显示
+=======
+     弹框显示
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
     showModal = () => {
         this.setState({
             visible: true,
@@ -79,7 +89,10 @@ class TaskList extends React.Component {
         this.setState({
             visible: false,
             upvisible: false,
+<<<<<<< HEAD
           istrue:false
+=======
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
         });
     };
 
@@ -97,7 +110,10 @@ class TaskList extends React.Component {
         this.setState({
             visible: false,
             upvisible: false,
+<<<<<<< HEAD
           istrue:false
+=======
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
         });
     };
 
@@ -105,6 +121,7 @@ class TaskList extends React.Component {
 
     // 编辑
     update(text,record,index){
+<<<<<<< HEAD
         new Promise((resolve)=>{
         this.setState({
           upvisible: true,
@@ -122,6 +139,18 @@ class TaskList extends React.Component {
             istrue:true
           })
       })
+=======
+        this.setState({
+            upvisible: true,
+            task_no:record.task_no,
+            task_name:record.task_name,
+            task_type:record.task_type,
+            task_reward:record. task_reward,
+            task_time:[moment(record.task_starttime, dateFormat)  ,moment(record.task_endtime, dateFormat)] ,
+            task_rules:record. task_rules,
+            task_isup:record.task_isup,
+        });
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
     }
 
     // 获取编辑表单数据并发起请求
@@ -357,7 +386,10 @@ class TaskList extends React.Component {
                 render:(val, record) =>{
                     return(
                         <Switch
+<<<<<<< HEAD
 
+=======
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
                             checkedChildren="ON"
                             uncheckedChildren="OFF"
                             defaultChecked={val}
@@ -373,6 +405,7 @@ class TaskList extends React.Component {
                 align:this.state.align,
                 width: 150,
                 render: (text, record,index) => (
+<<<<<<< HEAD
                     <Space style={{
                         cursor: 'pointer',
                         color: '#2378f7',
@@ -380,6 +413,11 @@ class TaskList extends React.Component {
                     }}>
                         <span onClick={()=>this.update(text,record,index)} ><EditOutlined /></span>
                         <span  onClick={()=>this.del(text,record,index)}> <DeleteOutlined /></span>
+=======
+                    <Space size="middle">
+                        <Button size='small' onClick={()=>this.update(text,record,index)} >编辑</Button>
+                        <Button type="primary" danger size='small' onClick={()=>this.del(text,record,index)}> 删除</Button>
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
                     </Space>
                 )
             }
@@ -391,8 +429,12 @@ class TaskList extends React.Component {
             <div>
                 <Row>
                     <Col span={2} offset={22}>
+<<<<<<< HEAD
                         <p style={{fontSize: '30px', cursor: 'pointer' , marginBottom:"10px"
                          }} onClick={this.showModal} ><UsergroupAddOutlined /></p>
+=======
+                        <Button type="primary" onClick={this.showModal} style={{marginBottom:"10px"}}>添加任务</Button>
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
                         {/*添加弹框*/}
                         <Modal
                             visible={visible}
@@ -443,6 +485,7 @@ class TaskList extends React.Component {
                             </Form>
                         </Modal>
                         {/*修改弹框*/}
+<<<<<<< HEAD
                       {this.state.istrue&& <Modal
                           visible={this.state.upvisible}
                           title="修改任务信息"
@@ -481,10 +524,51 @@ class TaskList extends React.Component {
                                 locale={locale}/>
                           </Form.Item>
                           <Form.Item name='task_rules' label="任务规则">
+=======
+                        <Modal
+                            visible={this.state.upvisible}
+                            title="修改任务信息"
+                            footer={null}
+                            onCancel={this.hideModal}
+                        >
+                            <Form
+                                style={{marginLeft:'-12px'}}
+                                labelCol={{ span: 6 }}
+                                wrapperCol={{ span: 14 }}
+                                layout="horizontal"
+                                onFinish={this.onFinish}
+                                initialValues={{
+                                    task_name:this.state.task_name,
+                                    task_type:this.state.task_type,
+                                    task_reward:this.state.task_reward,
+                                    task_time:this.state. task_time,
+                                    task_rules:this.state.task_rules,
+                                }}
+                            >
+                                <Form.Item name='task_name' label="任务名称">
+                                    <Input  placeholder="large size"  />
+                                </Form.Item>
+                                <Form.Item name='task_type' label="Select">
+                                    <Select>
+                                        <Option value="新手任务" >新手任务</Option>
+                                        <Option value="日常任务" >日常任务</Option>
+                                        <Option value="活动任务" >活动任务</Option>
+                                    </Select>
+                                </Form.Item>
+                                <Form.Item name='task_reward' label="任务奖励">
+                                    <Input  placeholder="large size" />
+                                </Form.Item>
+                                <Form.Item name='task_time' label="有效期">
+                                    <RangePicker
+                                        locale={locale}/>
+                                </Form.Item>
+                                <Form.Item name='task_rules' label="任务规则">
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
                                     <TextArea
                                         placeholder="任务规则"
                                         autoSize={{ minRows: 3, maxRows: 5 }}
                                     />
+<<<<<<< HEAD
                           </Form.Item>
                           <Form.Item style={{margin:'20px 0 0 120px '}} >
                             <Button key="back" onClick={this.handleCancel}>
@@ -497,6 +581,20 @@ class TaskList extends React.Component {
 
                         </Form>
                       </Modal>}
+=======
+                                </Form.Item>
+                                <Form.Item style={{margin:'20px 0 0 120px '}} >
+                                    <Button key="back" onClick={this.handleCancel}>
+                                        取消
+                                    </Button>
+                                    <Button key="submit" type="primary" htmlType="submit"  onClick={this.handleOk}>
+                                        提交
+                                    </Button>
+                                </Form.Item>
+
+                            </Form>
+                        </Modal>
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
                     </Col>
                 </Row>
                 <Row>

@@ -4,7 +4,11 @@ import { Table, Space,Button,Modal,Input, Form, Row, Col, Select, DatePicker, me
 import axios from "../../../util/axios";
 import Api from '../../../api/index'
 import { Upload } from 'antd';
+<<<<<<< HEAD
 import { UploadOutlined,EditOutlined ,DeleteOutlined} from '@ant-design/icons';
+=======
+import { UploadOutlined } from '@ant-design/icons';
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
 
 
 var ImgUrl=''
@@ -14,7 +18,11 @@ const { RangePicker } = DatePicker;
 const { TextArea } = Input;
 const ImgProps = {
     name: 'file',
+<<<<<<< HEAD
     action: "http://www.xiadachuan.cn/uploadfile.do",
+=======
+    action: 'http://172.16.6.16:8888/uploadfile.do',
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
     headers: {
       // authorization: 'authorization-text',
     },
@@ -54,7 +62,10 @@ class Test extends React.Component {
             nav_position:'' ,
             nav_sort:'',
             nav_display:0,
+<<<<<<< HEAD
             istrue:false,
+=======
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
 
         }
     }
@@ -70,7 +81,11 @@ class Test extends React.Component {
                 this.setState({
                     data:res.data.data
                 })
+<<<<<<< HEAD
 
+=======
+                this.success(res.data.msg)
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
             }else {
                 this.error('加载出错')
             }
@@ -100,7 +115,10 @@ class Test extends React.Component {
         this.setState({
             visible: false,
             upvisible: false,
+<<<<<<< HEAD
             istrue:false
+=======
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
         });
     };
 
@@ -118,7 +136,10 @@ class Test extends React.Component {
         this.setState({
             visible: false,
             upvisible: false,
+<<<<<<< HEAD
             istrue:false
+=======
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
         });
     };
 
@@ -126,6 +147,7 @@ class Test extends React.Component {
 
     // 编辑
     update(text,record,index){
+<<<<<<< HEAD
        new Promise(resolve => {
            this.setState({
                upvisible: true,
@@ -143,6 +165,18 @@ class Test extends React.Component {
                istrue:true
            })
        })
+=======
+        this.setState({
+            upvisible: true,
+            nav_no:record.nav_no,
+            nav_name:record.nav_name,
+            nav_icon:record.nav_icon,
+            nav_link:record.nav_link,
+            nav_position:record.nav_position,
+            nav_sort:record. nav_sort,
+            nav_display:record.nav_display,
+        });
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
     }
 
     // 获取编辑表单数据并发起请求
@@ -172,9 +206,12 @@ class Test extends React.Component {
                 window.sessionStorage.removeItem('imgUrl')
                 window.location.reload()
             }
+<<<<<<< HEAD
             this.setState({
                 istrue:false
             })
+=======
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
         }).catch((err)=>{
             console.log(err)
         })
@@ -199,7 +236,10 @@ class Test extends React.Component {
                 axios.post(Api.user.delNav,{
                     nav_no:no,
                 }).then((res)=>{
+<<<<<<< HEAD
                     this.success(res.data.msg)
+=======
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
                     window.location.reload()
                     console.log(res)
                 }).catch((err)=>{
@@ -220,7 +260,10 @@ class Test extends React.Component {
             nav_display:st
 
         }).then((res)=>{
+<<<<<<< HEAD
             this.success(res.data.msg)
+=======
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
            console.log(res)
         }).catch((err)=>{
             console.log(err)
@@ -241,7 +284,10 @@ class Test extends React.Component {
             if (res.data.code==200){
                 this.success('添加成功')
                 console.log(res)
+<<<<<<< HEAD
                 this.success(res.data.msg)
+=======
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
                 ImgUrl=''
                 window.location.reload()
             }
@@ -296,7 +342,11 @@ class Test extends React.Component {
               }
           },
             {
+<<<<<<< HEAD
                 title: '放置',
+=======
+                title: '放置位置',
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
                 dataIndex: 'nav_position',
                 key:'nav_position',
             },
@@ -305,6 +355,7 @@ class Test extends React.Component {
                 dataIndex: 'address',
                 key:'address',
                 render: (text, record,index) => (
+<<<<<<< HEAD
                     <Space size="middle"
                            style={{cursor: 'pointer',
                                color: '#2378f7',
@@ -313,6 +364,12 @@ class Test extends React.Component {
                         <span  onClick={()=>this.update(text,record,index)} ><EditOutlined /></span>
 
                         <span  onClick={()=>this.del(text,record,index)}><DeleteOutlined /></span>
+=======
+                    <Space size="middle">
+                        <Button size='small' onClick={()=>this.update(text,record,index)} >编辑</Button>
+
+                        <Button type="primary" danger size='small' onClick={()=>this.del(text,record,index)}> 删除</Button>
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
                     </Space>
                 )
             }
@@ -368,8 +425,12 @@ class Test extends React.Component {
                             </Form>
                         </Modal>
                         {/*修改弹框*/}
+<<<<<<< HEAD
                     {
                         this.state.istrue &&  <Modal
+=======
+                        <Modal
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
                             visible={this.state.upvisible}
                             title="修改导航信息"
                             footer={null}
@@ -391,6 +452,7 @@ class Test extends React.Component {
                                     nav_display:this.state.nav_display
                                 }}
                             >
+<<<<<<< HEAD
                                 <Form.Item name='nav_no' label="导航ID">
                                     <Input  placeholder="large size" disabled="disabled" />
                                 </Form.Item>
@@ -408,6 +470,25 @@ class Test extends React.Component {
                                     <Input  placeholder="large size" />
                                 </Form.Item>
                                 {/* <Form.Item name='nav_display' label="是否显示">
+=======
+                                 <Form.Item name='nav_no' label="导航ID">
+                           <Input  placeholder="large size" disabled="disabled" />
+                       </Form.Item>
+                       <Form.Item name='nav_name' label="导航名字">
+                           <Input  placeholder="large size"  />
+                       </Form.Item>
+                       <Form.Item name='nav_icon' label="导航图标">
+                       <Upload {...ImgProps}>
+                        <Button>
+                        <UploadOutlined /> 请选择头像
+                        </Button>
+                         </Upload>,
+                       </Form.Item>
+                       <Form.Item name='nav_position' label="放置位置">
+                           <Input  placeholder="large size" />
+                       </Form.Item>
+                       {/* <Form.Item name='nav_display' label="是否显示">
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
                            <Input  placeholder="large size"/>
                        </Form.Item> */}
 
@@ -422,7 +503,10 @@ class Test extends React.Component {
 
                             </Form>
                         </Modal>
+<<<<<<< HEAD
                     }
+=======
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
                     </Col>
                 </Row>
                 <Row>

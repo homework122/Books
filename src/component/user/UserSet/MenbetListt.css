@@ -3,16 +3,9 @@
     margin: 0;
     padding: 0;
     text-align: center;
-<<<<<<< HEAD
-
-}
-.grade{
-    margin:50px;
-=======
 }
 .grade{
     margin:100px;
->>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
     border-radius: 5px;
     /*border: 1px solid silver;*/
     width: auto;
@@ -40,13 +33,9 @@
 .cont .ant-col:nth-child(2n){
     font-weight: 600;
 }
-<<<<<<< HEAD
-
-=======
 .cont .ant-col:nth-child(2n+1){
     /*background-color: rgba(232, 232, 232, 0.53);*/
 }
->>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
 .tu{
     position: relative;
     /*border: grey 1px solid;*/
@@ -69,13 +58,6 @@
     color: white;
     border-radius: 3px;
 }
-<<<<<<< HEAD
-
-.leibiao{
-    text-align: center !important;
-    margin-left: 15%;
-    margin-right: 15%;
-=======
 .tongji{
     margin-top: 25%;
     margin-bottom: 25%;
@@ -99,6 +81,12 @@
     text-align: center !important;
     margin-left: 25%;
     margin-right: 25%;
->>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
 
+}
+.button{
+    text-align: right;
+
+}
+.button button{
+    margin-left: 20px;
 }

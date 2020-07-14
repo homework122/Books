@@ -42,6 +42,7 @@
 }
 .cont{
   padding: 10px;
+<<<<<<< HEAD
 }
 .addHuiYuan{
     font-size: 30px;
@@ -60,3 +61,7 @@
 /*.delHuiYuan:hover{*/
      /*color: #2378f7;*/
  /*}*/
+=======
+  border: 1px solid rgba(255, 15, 29, 0.24);
+}
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec

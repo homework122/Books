@@ -50,7 +50,11 @@ class Login extends Component {
     return (
         <Layout  className='loginContent'>
           <Header style={{background:'none'}} className='loginHead'>
+<<<<<<< HEAD
             <h1>七毛后台管理系统</h1>
+=======
+            <h1>七猫小说后台管理系统</h1>
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
           </Header>
           <Content className='formBox'>
             <Form

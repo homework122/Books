@@ -1,4 +1,5 @@
 import React from 'react'
+<<<<<<< HEAD
 import './MenbetList.css'
 import {Layout, message, Pagination} from 'antd';
 import { Table, Space,Button,Modal,Input,Row, Col,Switch,DatePicker  } from 'antd';
@@ -6,6 +7,17 @@ import {SearchOutlined,CopyOutlined,EyeOutlined } from '@ant-design/icons';
 import Axios from './../../../util/axios.js'
 import Api from './../../../api/index'
 const {  Sider, Content } = Layout;
+=======
+import {Layout, message, Pagination} from 'antd';
+import { Table, Space,Button,Modal,Input,Row, Col,Switch,DatePicker  } from 'antd';
+import {SearchOutlined} from '@ant-design/icons';
+import './MenbetList.css'
+import Axios from './../../../util/axios.js'
+import Api from './../../../api/index'
+const {  Sider, Content } = Layout;
+
+
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
 class MemberList extends React.Component {
     constructor(prors) {
         super(prors)
@@ -42,7 +54,13 @@ axios=()=>{
         pageSize:this.state.pageSize
     })
         .then((res)=>{
+<<<<<<< HEAD
             if(res.status===200){
+=======
+            console.log(res)
+            if(res.status===200){
+                console.log(res.data)
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
                 this.setState({
                     data : res.data.data,
                     total:res.data.count
@@ -93,6 +111,10 @@ axios=()=>{
         Axios.post(Api.user.information,{
             user_no:record.user_no
         }).then((res)=>{
+<<<<<<< HEAD
+=======
+                console.log(res)
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
                 if(res.status===200){
                     console.log(res.data)
                     this.setState({
@@ -108,7 +130,11 @@ axios=()=>{
             console.log('出错')
         })
     }
+<<<<<<< HEAD
     row   //添加
+=======
+    //添加
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
     add(){
         console.log('123')
     }
@@ -138,6 +164,10 @@ axios=()=>{
                     total:res.data.count
                 })
                 // window.location.reload()
+<<<<<<< HEAD
+=======
+
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
             }else{
                 console.log('获取失败')
             }
@@ -156,6 +186,7 @@ axios=()=>{
     onChangeee = (page, pageSize) => {
         console.log('Page: ', page);
         console.log('pageSize: ', pageSize);
+<<<<<<< HEAD
         new Promise(resolve => {
             this.setState({
                 page: page,
@@ -165,6 +196,12 @@ axios=()=>{
                 this.axios()
             }
         )
+=======
+        this.setState({
+            page: page,
+        })
+        this.axios()
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
     }
     //分页结束
     //查询日期
@@ -193,6 +230,13 @@ axios=()=>{
         console.log('switch=',this.state.switch)
     }
     onSwitch=(text,record,index)=>{
+<<<<<<< HEAD
+=======
+        console.log(text)
+        console.log('9999999',record)
+        console.log(index)
+        console.log('000000=',this.state.switch)
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
         Axios.post(Api.user.state,
             {user_no:record.user_no,
                 user_status:this.state.switch
@@ -206,6 +250,48 @@ axios=()=>{
         })
     }
   render() {
+<<<<<<< HEAD
+=======
+      //多选框
+      // const { selectedRowKeys } = this.state;
+      // const rowSelection = {
+      //     selectedRowKeys,
+      //     onChange: this.onSelectChange,
+      //     selections: [
+      //         Table.SELECTION_ALL,
+      //         Table.SELECTION_INVERT,
+      //         {
+      //             key: 'odd',
+      //             text: 'Select Odd Row',
+      //             onSelect: changableRowKeys => {
+      //                 let newSelectedRowKeys = [];
+      //                 newSelectedRowKeys = changableRowKeys.filter((key, index) => {
+      //                     if (index % 2 !== 0) {
+      //                         return false;
+      //                     }
+      //                     return true;
+      //                 });
+      //                 this.setState({ selectedRowKeys: newSelectedRowKeys });
+      //             },
+      //         },
+      //         {
+      //             key: 'even',
+      //             text: 'Select Even Row',
+      //             onSelect: changableRowKeys => {
+      //                 let newSelectedRowKeys = [];
+      //                 newSelectedRowKeys = changableRowKeys.filter((key, index) => {
+      //                     if (index % 2 !== 0) {
+      //                         return true;
+      //                     }
+      //                     return false;
+      //                 });
+      //                 this.setState({ selectedRowKeys: newSelectedRowKeys });
+      //             },
+      //         },
+      //     ],
+      // };
+      //查询日期
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
       const { visible, loading ,loadinge,visiblee} = this.state;
       const columns = [
           {
@@ -242,8 +328,13 @@ axios=()=>{
               title: '专属客服微信号',
               dataIndex: 'user_selfvx',
               render: (text, record,index) => (
+<<<<<<< HEAD
                   <Space size="middle" style={{Color:'#1890FF !important'}}>
                       <p onClick={()=>this.click(text,record,index)} className='color1'>{text}</p>
+=======
+                  <Space size="middle">
+                      <p onClick={()=>this.click(text,record,index)}>{text}</p>
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
                   </Space>
               )
           },
@@ -256,7 +347,11 @@ axios=()=>{
               dataIndex: 'user_status',
               render: (text, record,index) => (
                   <Space size="middle">
+<<<<<<< HEAD
                       <Switch  eckedChildren="开启" unCheckedChildren="关闭" defaultChecked={text} onClick={()=>this.onSwitch(text, record,index)} onChange={this.onChangee}/>
+=======
+                      <Switch checkedChildren="开启" unCheckedChildren="关闭" defaultChecked={text} onClick={()=>this.onSwitch(text, record,index)} onChange={this.onChangee}/>
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
                   </Space>
               )
           },
@@ -264,14 +359,20 @@ axios=()=>{
               title: '操作',
               dataIndex: 'address',
               render: (text, record,index) => (
+<<<<<<< HEAD
                   <Space className='chaKan'>
                       <p  onClick={()=>this.chakan(text,record,index)}> <EyeOutlined /></p>
+=======
+                  <Space size="middle">
+                      <Button type="primary" danger size='small' onClick={()=>this.chakan(text,record,index)}> 查看</Button>
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
                   </Space>
               )
           }
       ];
       return (
           <div >
+<<<<<<< HEAD
               {/*<h1>会员管理列表</h1>*/}
               {/*查询*/}
               <div className='query1'>
@@ -282,11 +383,24 @@ axios=()=>{
               </div>
               <div style={{textAlign:'left'}}>
                   <Row className="row1">
+=======
+              <h1>会员管理列表</h1>
+              {/*查询*/}
+              <div className='query'>
+              客服微信号： <Input ref='user_selfvx' placeholder="客服微信号" />
+                用户昵称：<Input ref='user_nickname' placeholder="用户昵称" />
+                注册时间： <DatePicker  onChange={this.onChange} onOk={this.onOk} style={{width:'250px',marginLeft: '30px'}} />
+                  <Button shape="circle" icon={<SearchOutlined />} size='size' onClick={this.chaxun} />
+              </div>
+              <div style={{textAlign:'left'}}>
+                  <Row className="row">
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
                       <Col span={4} style={{marginTop:'5px'}}>
                         <p>
                           会员列表
                         </p>
                       </Col>
+<<<<<<< HEAD
                       <Col span={3} offset={17}>
                           {/*<Button style={{marginRight:'30px'}}>批量删除</Button>*/}
                           <Button type='primary' onClick={this.add.bind(this)}><CopyOutlined />导出</Button>
@@ -295,6 +409,16 @@ axios=()=>{
               </div>
               <Table pagination={false}  columns={columns} dataSource={this.state.data} />
               <div >
+=======
+                      <Col span={18} offset={20} style={{marginTop:'-80px',marginRight:'30px'}}>
+                          {/*<Button style={{marginRight:'30px'}}>批量删除</Button>*/}
+                          <Button  onClick={this.add.bind(this)}>导出数据</Button>
+                      </Col>
+                  </Row>
+              </div>
+              <Table pagination={false}  columns={columns} dataSource={this.state.data}  scroll={{ y: 240 }} />
+              <div className="grade">
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
                   <Modal
                       visible={visible}
                       width="90%"
@@ -310,9 +434,15 @@ axios=()=>{
                           </Button>,
                       ]}
                   >
+<<<<<<< HEAD
                       <Row >
                           <Col span={5}>
                               <div className='tut'>
+=======
+                      <Row className='col'>
+                          <Col span={5}>
+                              <div className='tu'>
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
                                   <div><img src='http://120.79.74.129/group1/M00/00/00/rBJrKF8FKj6AZ6N3AAB88mSKJZg077.jpg' style={{width:'80px',height:'80px',borderRadius:'50%'}} /></div><br/>
                                   <div>{this.state.list.user_name}</div>
                                   <div>vip{this.state.list.vip_no}</div>
@@ -325,7 +455,11 @@ axios=()=>{
                                           <Content style={{backgroundColor: 'white'}}>
                                               <div>
                                                   <div >
+<<<<<<< HEAD
                                                       <Row className='cont2'>
+=======
+                                                      <Row className='cont'>
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
                                                           <Col span={3}>微信OpenID:</Col>
                                                           <Col span={9}>{this.state.list.user_vx}</Col>
                                                           <Col span={3}>生日:</Col>
@@ -333,7 +467,11 @@ axios=()=>{
                                                       </Row>
                                                   </div>
                                                   <div >
+<<<<<<< HEAD
                                                       <Row className='cont2'>
+=======
+                                                      <Row className='cont'>
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
                                                           <Col span={3}>昵称:</Col>
                                                           <Col span={9} >{this.state.list.user_nickname}</Col>
                                                           <Col span={3}>个性签名:</Col>
@@ -341,7 +479,11 @@ axios=()=>{
                                                       </Row>
                                                   </div>
                                                   <div >
+<<<<<<< HEAD
                                                       <Row className='cont2'>
+=======
+                                                      <Row className='cont'>
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
                                                           <Col span={3}>性别:</Col>
                                                           <Col span={9}>{this.state.list.user_sex}</Col>
                                                           <Col span={3}>注册时间:</Col>
@@ -349,7 +491,11 @@ axios=()=>{
                                                       </Row>
                                                   </div>
                                                   <div >
+<<<<<<< HEAD
                                                       <Row className='cont2'>
+=======
+                                                      <Row className='cont'>
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
                                                           <Col span={3}>手机号:</Col>
                                                           <Col span={9}>{this.state.list.user_phone}</Col>
                                                           <Col span={3}>专属客服:</Col>
@@ -363,7 +509,11 @@ axios=()=>{
                               </Row>
                           </Col>
                       </Row>
+<<<<<<< HEAD
                       <Row className='tongjie'>
+=======
+                      <Row className='tongji'>
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
                           <Col span={24}>
                               <div>
                                   <h4>统计信息</h4>
@@ -401,7 +551,11 @@ axios=()=>{
                   >
                       <Row>
                           <Col span={12}>
+<<<<<<< HEAD
                               <Row className='col34'>
+=======
+                              <Row className='col3'>
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
                                   <Col span={10}>
                                       <div>
                                           <span>客服微信号:</span>

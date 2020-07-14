@@ -2,7 +2,11 @@
 import React, { Component } from 'react';
 import { Input, Select } from 'antd';
 import { Button } from 'antd';
+<<<<<<< HEAD
 import { SearchOutlined ,EditOutlined ,EyeOutlined} from '@ant-design/icons';
+=======
+import { SearchOutlined } from '@ant-design/icons';
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
 import { Modal } from 'antd';
 import {
     Form,
@@ -36,7 +40,11 @@ class TxtList extends Component {
             Specific: '', // 详情
             props: {
                 name: 'file',
+<<<<<<< HEAD
                 action: "http://www.xiadachuan.cn/uploadfile.do",
+=======
+                action: 'http://www.xiadachuan.cn/uploadfile.do',
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
                 headers: {
                     // authorization: 'authorization-text',
                 },
@@ -218,11 +226,17 @@ class TxtList extends Component {
                 dataIndex: 'address',
                 align: 'center',
                 render: (text, record, index) => (
+<<<<<<< HEAD
                     <Space size="middle" style={{cursor: 'pointer',
                         color: '#2378f7',
                         fontSize:'15px' }}>
                         <span  onClick={() => this.showConfirm(text, record, index)} ><EyeOutlined /></span>
                         <span  onClick={() => this.del(text, record, index)}><EditOutlined /></span>
+=======
+                    <Space size="middle">
+                        <Button size='small' onClick={() => this.showConfirm(text, record, index)} >详情</Button>
+                        <Button type="primary" danger size='small' onClick={() => this.del(text, record, index)}> 删除</Button>
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
                     </Space>
                 )
             }
@@ -230,8 +244,13 @@ class TxtList extends Component {
         return (
             <div>
                 {/* 搜索栏开始 */}
+<<<<<<< HEAD
                 <div style={{ fontSize: '20px', overflow: 'hidden', height: '35px', lineHeight: '35px' }}></div>
                 <div style={{  padding: '10px', borderTop: 'none', overflow: 'hidden', marginBottom: '30px' }}>
+=======
+                <div style={{ fontSize: '20px', overflow: 'hidden', backgroundColor: 'rgba(0,0,0,.3)', height: '35px', lineHeight: '35px', color: 'white' }}><span style={{ float: 'left', marginLeft: '20px' }}>搜索添加</span></div>
+                <div style={{ border: '1px solid black ', padding: '10px', borderTop: 'none', overflow: 'hidden', marginBottom: '30px' }}>
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
                     {/* 模态框按钮 */}
                     <Button type="primary" onClick={this.showModal} style={{ float: 'right', marginRight: '20px' }}>
                         添加

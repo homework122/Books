@@ -1,7 +1,11 @@
 
 import React from 'react'
 import {Layout,Input,Select,Button,Col,Row,Form,Table, Space,Modal,Switch,Radio,Upload, message,Pagination } from 'antd';
+<<<<<<< HEAD
 import { SearchOutlined,LoadingOutlined, PlusOutlined,HighlightTwoTone,UploadOutlined,EditOutlined,DeleteOutlined  } from '@ant-design/icons';
+=======
+import { SearchOutlined,LoadingOutlined, PlusOutlined,HighlightTwoTone,UploadOutlined} from '@ant-design/icons';
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
 import Axios from '../../../util/axios'
 import Api from '../../../api/index'
 import '../../../util/css/UserMange.css'
@@ -12,7 +16,11 @@ var imgurl
 // 图片上传数据
 const props = {
   name: 'file',
+<<<<<<< HEAD
     action: "http://www.xiadachuan.cn/uploadfile.do",
+=======
+  action: 'http://www.xiadachuan.cn/uploadfile.do',
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
   headers: {
     // authorization: 'authorization-text',
   },
@@ -407,6 +415,7 @@ class RoleMange extends React.Component {
         title: '操作',
         dataIndex:'age',
         render: (text, record,index) => (
+<<<<<<< HEAD
             <Space size="middle" style={{
                 cursor: 'pointer',
                 color: '#2378f7',
@@ -414,6 +423,11 @@ class RoleMange extends React.Component {
             }}>
               <span  onClick={()=>this.update(text,record,index)} ><EditOutlined /></span>
               <span  onClick={()=>this.del(text,record,index)}> <DeleteOutlined /></span>
+=======
+            <Space size="middle">
+              <Button size='small' onClick={()=>this.update(text,record,index)} >编辑</Button>
+              <Button type="primary" danger size='small' onClick={()=>this.del(text,record,index)}> 删除</Button>
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
             </Space>
         ),
       },

@@ -4,7 +4,11 @@ import { Table, Space,Button,Modal,Input, Form, Row, Col, Select, DatePicker, me
 import axios from "../../../util/axios";
 import Api from '../../../api/index'
 import { Upload } from 'antd';
+<<<<<<< HEAD
 import { UploadOutlined,EditOutlined } from '@ant-design/icons';
+=======
+import { UploadOutlined } from '@ant-design/icons';
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
 
 
 var ImgUrl=''
@@ -14,7 +18,11 @@ const { RangePicker } = DatePicker;
 const { TextArea } = Input;
 const ImgProps = {
     name: 'file',
+<<<<<<< HEAD
     action: "http://www.xiadachuan.cn/uploadfile.do",
+=======
+    action: 'http://www.xiadachuan.cn/uploadfile.do',
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
     headers: {
       // authorization: 'authorization-text',
     },
@@ -55,8 +63,12 @@ class ServiceMange extends React.Component {
             wait_phone:'',
             wait_desc:'',
             wait_status:'',
+<<<<<<< HEAD
             wait_logo:'',
             istrue:false
+=======
+            wait_logo:''
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
         }
     }
     componentDidMount() {
@@ -96,7 +108,10 @@ class ServiceMange extends React.Component {
         this.setState({
             visible: false,
             upvisible: false,
+<<<<<<< HEAD
             istrue:false
+=======
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
         });
     };
 
@@ -114,7 +129,10 @@ class ServiceMange extends React.Component {
         this.setState({
             visible: false,
             upvisible: false,
+<<<<<<< HEAD
             istrue:false
+=======
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
         });
     };
 
@@ -122,6 +140,7 @@ class ServiceMange extends React.Component {
 
     // 编辑
     update(text,record,index){
+<<<<<<< HEAD
       new Promise(resolve => {
           this.setState({
               upvisible: true,
@@ -139,6 +158,17 @@ class ServiceMange extends React.Component {
               istrue:true
           })
       })
+=======
+        this.setState({
+            upvisible: true,
+            wait_no:record.wait_no,
+            wait_name:record.wait_name,
+            wait_logo:record.wait_logo,
+            wait_phone:record.wait_phone,
+            wait_desc:record.wait_desc,
+            wait_isup:record.wait_isup
+        });
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
     }
 
     // 获取编辑表单数据并发起请求
@@ -155,21 +185,61 @@ class ServiceMange extends React.Component {
             wait_isup:this.state.wait_isup
         }).then((res)=>{
             if (res.data.code==200){
+<<<<<<< HEAD
                 this.success(res.data.msg)
+=======
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
                 window.location.reload()
             }else{
                 window.location.reload()
             }
+<<<<<<< HEAD
             this.setState({
                 istrue:false
             })
+=======
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
         }).catch((err)=>{
             console.log(err)
         })
     }
 
 
+<<<<<<< HEAD
 
+=======
+    // 删除
+    // del(text,record,index){
+    //     console.log(record.wait_no)
+    //     this.showDeleteConfirm(record.wait_no)
+    // }
+    // // 删除弹框
+    // showDeleteConfirm(no) {
+    //     console.log(no)
+    //     confirm({
+    //         title: '是否确认删除?',
+    //         okText: '确认',
+    //         okType: 'danger',
+    //         cancelText: '取消',
+    //         // 点击确认触发
+    //         onOk() {
+    //             axios.post(Api.user.delNav,{
+    //                 nav_no:no,
+    //             }).then((res)=>{
+    //                 window.location.reload()
+    //                 console.log(res)
+    //             }).catch((err)=>{
+    //                 console.log(err)
+    //             })
+    //         },
+    //         // 点击取消触发
+    //         onCancel() {
+    //             console.log('Cancel');
+    //         },
+    //     });
+    // }
+    // 滑块
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
     handleSetStatus=(checked, record)=>{
         let st = checked ? 1 : 0
         console.log(checked)
@@ -178,7 +248,10 @@ class ServiceMange extends React.Component {
             wait_isup:st
         }).then((res)=>{
            console.log(res)
+<<<<<<< HEAD
             this.success(res.data.msg)
+=======
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
            window.location.reload()
         }).catch((err)=>{
             console.log(err)
@@ -194,7 +267,10 @@ class ServiceMange extends React.Component {
         axios.post(Api.user.addService,values).then((res)=>{
             if (res.data.code==200){
                 console.log(res)
+<<<<<<< HEAD
                 this.success(res.data.msg)
+=======
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
                 window.location.reload()
             }
             console.log(res)
@@ -210,19 +286,28 @@ class ServiceMange extends React.Component {
             {
                 title: '客户Id',
                 dataIndex: 'wait_no',
+<<<<<<< HEAD
                 align: 'center'
+=======
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
             },
             {
                 title: '客户名称',
                 dataIndex: 'wait_name',
                 width: 150,
+<<<<<<< HEAD
                 align: 'center'
+=======
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
             },
             {
                 title: '头像',
                 dataIndex: 'wait_logo',
                 width: 150,
+<<<<<<< HEAD
                 align: 'center',
+=======
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
                 render:(r) => {
 
                     // for(let i=0 ;i<this.state.ServiceList.length;i++){
@@ -232,12 +317,18 @@ class ServiceMange extends React.Component {
             {
                 title: '微信号',
                 dataIndex: 'wait_phone',
+<<<<<<< HEAD
                 align: 'center'
+=======
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
             },
             {
                 title: '客服介绍',
                 dataIndex: 'wait_desc',
+<<<<<<< HEAD
                 align: 'center'
+=======
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
             },
             {
                 title: '状态',
@@ -253,12 +344,17 @@ class ServiceMange extends React.Component {
                     onClick={(checked)=>this.handleSetStatus(checked,record,index)}
                     />
                   )
+<<<<<<< HEAD
                 },
                 align: 'center'
+=======
+                }
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
             },
             {
                 title: '操作',
                 dataIndex: 'address',
+<<<<<<< HEAD
                 align: 'center',
                 render: (text, record,index) => (
                     <Space size="middle" style={{
@@ -267,6 +363,11 @@ class ServiceMange extends React.Component {
                         fontSize:'15px'
                     }}>
                         <p  onClick={()=>this.update(text,record,index)} ><EditOutlined /></p>
+=======
+                render: (text, record,index) => (
+                    <Space size="middle">
+                        <Button size='small' onClick={()=>this.update(text,record,index)} >编辑</Button>
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
 
                         {/* <Button type="primary" danger size='small' onClick={()=>this.del(text,record,index)}> 删除</Button> */}
                     </Space>
@@ -321,7 +422,11 @@ class ServiceMange extends React.Component {
                             </Form>
                         </Modal>
                         {/*修改弹框*/}
+<<<<<<< HEAD
                         {this.state.istrue &&  <Modal
+=======
+                        <Modal
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
                             visible={this.state.upvisible}
                             title="修改客服信息"
                             footer={null}
@@ -334,7 +439,11 @@ class ServiceMange extends React.Component {
                                 layout="horizontal"
                                 onFinish={this.onFinish}
                                 initialValues={{
+<<<<<<< HEAD
 
+=======
+                
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
                                     wait_name: this.state.wait_name,
                                     wait_logo:this.state.wait_logo,
                                     wait_phone:this.state.wait_phone,
@@ -343,6 +452,7 @@ class ServiceMange extends React.Component {
                                     wait_isup:this.state.wait_isup
                                 }}
                             >
+<<<<<<< HEAD
                                 <Form.Item name='wait_no' label="客服ID">
                                     <Input  placeholder="large size" disabled="disabled" />
                                 </Form.Item>
@@ -366,6 +476,31 @@ class ServiceMange extends React.Component {
                            <Input  placeholder="large size"/>
                        </Form.Item> */}
                                 {/* <Form.Item name='nav_sort' label="排序号">
+=======
+                                  <Form.Item name='wait_no' label="客服ID">
+                           <Input  placeholder="large size" disabled="disabled" />
+                       </Form.Item>
+                       <Form.Item name='wait_name' label="客服名称">
+                           <Input  placeholder="large size"  />
+                       </Form.Item>
+                       <Form.Item name='wait_logo' label="客服头像">
+                       <Upload {...ImgProps}>
+                        <Button>
+                        <UploadOutlined /> 请选择头像
+                        </Button>
+                         </Upload>,
+                       </Form.Item>
+                       <Form.Item name='wait_phone' label="手机号">
+                           <Input  placeholder="large size" />
+                       </Form.Item>
+                       <Form.Item name='wait_desc' label="客服介绍">
+                           <Input  placeholder="large size"/>
+                       </Form.Item>
+                       {/* <Form.Item name='nav_display' label="是否显示">
+                           <Input  placeholder="large size"/>
+                       </Form.Item> */}
+                       {/* <Form.Item name='nav_sort' label="排序号">
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
                            <Input  placeholder="large size"/>
                        </Form.Item> */}
                                 <Form.Item style={{margin:'20px 0 0 120px'}} >
@@ -378,7 +513,11 @@ class ServiceMange extends React.Component {
                                 </Form.Item>
 
                             </Form>
+<<<<<<< HEAD
                         </Modal>}
+=======
+                        </Modal>
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
                     </Col>
                 </Row>
                 <Row>

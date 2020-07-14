@@ -3,7 +3,10 @@ import React from 'react'
 import { Table, Space,Button,Modal,Input, Form, Row, Col, Select, DatePicker, message,Switch } from 'antd';
 import axios from "../../../util/axios";
 import Api from '../../../api/index'
+<<<<<<< HEAD
 import { EditOutlined,ArrowDownOutlined } from '@ant-design/icons';
+=======
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
 const { confirm } = Modal;
 const { Option } = Select;
 const { RangePicker } = DatePicker;
@@ -228,18 +231,30 @@ class ProductList extends React.Component {
                 title: '商品编号',
                 dataIndex: 'vip_no',
                 key:'vip_no',
+<<<<<<< HEAD
 
+=======
+                width: 150,
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
             },
             {
                 title: '商品名称',
                 dataIndex: 'vip_name',
+<<<<<<< HEAD
 
+=======
+                width: 150,
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
                 key:'vip_name',
             },
             {
                 title: '商品图片',
                 dataIndex: 'vip_img_url',
+<<<<<<< HEAD
 
+=======
+                width: 150,
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
                 key:'vip_img_url',
                 render:(r) =>{
                     // for(let i=0 ;i<this.state.NavList.length;i++){
@@ -249,7 +264,11 @@ class ProductList extends React.Component {
             {
               title: '使用积分值',
               dataIndex: 'vip_itg',
+<<<<<<< HEAD
 
+=======
+              width: 150,
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
               key:'vip_itg',
           },
             {
@@ -257,6 +276,7 @@ class ProductList extends React.Component {
                 dataIndex: 'address',
                 key:'address',
                 render: (text, record,index) => (
+<<<<<<< HEAD
                     <Space size="middle" style={{
                         cursor: 'pointer',
                         color: '#2378f7',
@@ -265,6 +285,12 @@ class ProductList extends React.Component {
                         <span onClick={()=>this.update(text,record,index)} ><EditOutlined /></span>
 
                         <span   onClick={()=>this.del(text,record,index)}> <ArrowDownOutlined /></span>
+=======
+                    <Space size="middle">
+                        <Button size='small' onClick={()=>this.update(text,record,index)} >编辑</Button>
+
+                        <Button  size='small' onClick={()=>this.del(text,record,index)}> 下架</Button>
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
                     </Space>
                 )
             }

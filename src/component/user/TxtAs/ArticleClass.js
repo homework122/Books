@@ -4,7 +4,11 @@ import { Table, Space, Button, Switch, Modal, message, Input, Pagination } from 
 import { inject, observer } from 'mobx-react'
 import Axios from './../../../util/axios'
 import Api from './../../../api/index'
+<<<<<<< HEAD
 import {DeleteOutlined } from '@ant-design/icons'
+=======
+
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
 const { confirm } = Modal; // 生成模态框
 @inject('Types')
 @observer
@@ -137,19 +141,33 @@ class ArticleClass extends Component {
                 align: 'center',
                 render: (text, record, index) => (
                     <Space size="middle">
+<<<<<<< HEAD
                         <p style={{
                             fontSize: '20px',
                             cursor: 'pointer',
                             color: '#2378f7'
                         }} onClick={() => this.del(text, record, index)}> <DeleteOutlined /></p>
+=======
+                        <Button type="primary" danger size='small' onClick={() => this.del(text, record, index)}> 删除</Button>
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
                     </Space>
                 )
             }
         ]; // 表格VM
         return (
             <div>
+<<<<<<< HEAD
                 {/* 添加开始 */}
                 <Button type="primary" onClick={this.showModal} style={{ marginLeft:'90%',marginTop:'10px',marginBottom:'10px' }}>
+=======
+                {/* 表格部分 */}
+                <Table pagination={false}
+                    // @ts-ignore
+                       columns={columns} dataSource={this.state.TypeList} scroll={{ y: 240 }} />
+                {/* 表格部分 */}
+                {/* 添加开始 */}
+                <Button type="primary" onClick={this.showModal} style={{ marginTop: '20px', position: 'absolute', right: '50px' }}>
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
                     添加分类
                 </Button>
                 <Modal
@@ -164,12 +182,15 @@ class ArticleClass extends Component {
                     <Input name='typename' placeholder="请输入分类名" style={{ width: '300px', marginLeft: '30px' }} onChange={this.AddNanme} value={this.state.addName}/>
                 </Modal>
                 {/* 添加结束 */}
+<<<<<<< HEAD
                 {/* 表格部分 */}
                 <Table pagination={false}
                     // @ts-ignore
                        columns={columns} dataSource={this.state.TypeList} scroll={{ y: 240 }} />
                 {/* 表格部分 */}
 
+=======
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
                 {/* 分页 */}
                 <Pagination current={this.state.current} onChange={this.onChangePage} total={(Math.ceil(
                     // @ts-ignore

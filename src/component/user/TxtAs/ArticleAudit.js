@@ -2,7 +2,10 @@
 import React, { Component } from 'react';
 import { Table, Space, Button, Modal, message, Pagination } from 'antd'
 import { inject, observer } from 'mobx-react'
+<<<<<<< HEAD
 import { SearchOutlined ,EditOutlined ,EyeOutlined} from '@ant-design/icons';
+=======
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
 
 @inject('Audit')
 @observer
@@ -121,12 +124,18 @@ class Audit extends Component {
                 dataIndex: 'address',
                 align: 'center',
                 render: (text, record, index) => (
+<<<<<<< HEAD
                     <Space size="middle" style={{cursor: 'pointer',
                         color: '#2378f7',
                         fontSize:'15px' }}
                     >
                         <span  onClick={() => this.showConfirm(text, record, index)} ><EyeOutlined /></span>
                         <span  onClick={() => this.audit(text, record, index)}><EditOutlined /></span>
+=======
+                    <Space size="middle">
+                        <Button size='small' onClick={() => this.showConfirm(text, record, index)} >详情</Button>
+                        <Button type="primary" danger size='small' onClick={() => this.audit(text, record, index)}>审核/复审</Button>
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
                     </Space>
                 )
             }

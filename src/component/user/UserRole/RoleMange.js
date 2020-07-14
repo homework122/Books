@@ -58,13 +58,20 @@ class RoleMange extends React.Component {
     let roleState = this.formRef.current.getFieldsValue().user_state
     let menuList = [...this.props.user.menuList]
     console.log(roleName,roleState)
+<<<<<<< HEAD
     console.log('get',treeStore.get())
     console.log('get1',JSON.parse(sessionStorage.getItem('menluList')))
+=======
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
     // 发起请求
     Axios.post(Api.user.addRole,{
       role_name:roleName,
       role_status:parseInt(roleState),
+<<<<<<< HEAD
       menuList:JSON.parse(sessionStorage.getItem('menluList'))
+=======
+      menuList:treeStore.get()
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
     }).then((res)=>{
       console.log('添加返回',res);
       if(res.data.code == 200){

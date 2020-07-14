@@ -121,7 +121,11 @@ class Index extends React.Component {
           <Header className='indexHead'>
             <Row >
               <Col span={5} style={{textAlign:'left !important'}}>
+<<<<<<< HEAD
                 <h2 style={{color: 'white'}}>七毛后台管理系统</h2>
+=======
+                <h2>七毛小说后台管理系统</h2>
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
               </Col>
               <Col  span={19} >
                 <Row style={{textAlign:'right !important'}} >
@@ -143,9 +147,15 @@ class Index extends React.Component {
             </Row>
           </Header>
           <Layout>
+<<<<<<< HEAD
             <Sider width={200} className="site-layout">
               {/*这里写一个组件，根据数据生成Menu*/}
               <LeftMenu className="site-layout" history={this.props.history} />
+=======
+            <Sider width={200} className="site-layout-background">
+              {/*这里写一个组件，根据数据生成Menu*/}
+              <LeftMenu  history={this.props.history} />
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
             </Sider>
             <Layout style={{ padding: '0 24px 24px' }}>
               <Content

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import userStore from './userStore'
+=======
+import userStore from './UserStore'
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
 import TxtsStore from './TxtsStore'
 import TypesStore from './TypesStore'
 import AuditStore from './AuditStore'

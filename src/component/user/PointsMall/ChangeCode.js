@@ -2,7 +2,11 @@
 import React from 'react'
 import {Layout, message, Modal, Pagination, Space, Switch} from 'antd';
 import {Button, Col, DatePicker, Input, Row, Table } from "antd";
+<<<<<<< HEAD
 import {SearchOutlined,DeleteOutlined} from '@ant-design/icons';
+=======
+import {SearchOutlined} from '@ant-design/icons';
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
 import Axios from './../../../util/axios.js'
 import Api from './../../../api/index'
 const { confirm } = Modal;
@@ -151,18 +155,24 @@ class ChangeCode extends React.Component {
                 title: '操作',
                 dataIndex: 'address',
                 render: (text, record,index) => (
+<<<<<<< HEAD
                     <Space size="middle" style={{
                         cursor: 'pointer',
                         color: '#2378f7',
                         fontSize: '15px'
                     }}>
                         <p  onClick={()=>this.del(text,record,index)}> <DeleteOutlined /></p>
+=======
+                    <Space size="middle">
+                        <Button type="primary" danger size='small' onClick={()=>this.del(text,record,index)}> 删除</Button>
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
                     </Space>
                 )
             }
         ];
         return (
             <div>
+<<<<<<< HEAD
                 {/*<h2>兑换记录</h2>*/}
                 {/*查询*/}
                 <div style={{
@@ -170,6 +180,13 @@ class ChangeCode extends React.Component {
                 }}>
                     用户昵称： <Input ref='user_name' placeholder="用户昵称"  style={{width:'200px',marginLeft:"20px",marginBottom:'20px',marginRight:"20px"}}/>
                     商品名称：<Input ref='vip_name' placeholder="商品名称"  style={{width:'200px',marginLeft:"20px",marginRight:"20px"}}/>
+=======
+                <h2>兑换记录</h2>
+                {/*查询*/}
+                <div className='query'>
+                    用户昵称： <Input ref='user_name' placeholder="用户昵称" />
+                    商品名称：<Input ref='vip_name' placeholder="商品名称" />
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
                     <Button shape="circle" icon={<SearchOutlined />} size='size' onClick={this.chaxun} />
                 </div>
 

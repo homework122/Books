@@ -2,7 +2,11 @@
 import React,{ useState } from 'react'
 import { Table, Space,Button,Modal,Input, Form, Row, Col, Select, DatePicker } from 'antd';
 import { SearchOutlined } from '@ant-design/icons';
+<<<<<<< HEAD
 import { HighlightTwoTone,EyeOutlined,DeleteOutlined } from '@ant-design/icons';
+=======
+import { HighlightTwoTone } from '@ant-design/icons';
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
 import moment from 'moment';
 import {inject,observer} from 'mobx-react'
 import axios from '../../../util/axios'
@@ -202,11 +206,20 @@ class TaskList extends React.Component {
             {
                 title: '用户ID',
                 dataIndex: 'opinion_no',
+<<<<<<< HEAD
     },
             {
                 title: '用户手机号',
                 dataIndex: 'user_phone',
 
+=======
+                width: 150,
+            },
+            {
+                title: '用户手机号',
+                dataIndex: 'user_phone',
+                width: 150,
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
             },
             {
                 title: '用户昵称',
@@ -231,6 +244,7 @@ class TaskList extends React.Component {
                 title: '操作',
                 dataIndex: 'address',
                 render: (text, record,index) => (
+<<<<<<< HEAD
                     <Space size="middle" style={{
                         cursor: 'pointer',
                         color:' #2378f7',
@@ -238,6 +252,11 @@ class TaskList extends React.Component {
                     }}>
                         <span  onClick={()=>this.update(text,record,index)} ><EyeOutlined/></span>
                         <span onClick={()=>this.del(text,record,index)}><DeleteOutlined /></span>
+=======
+                    <Space size="middle">
+                        <Button size='small' onClick={()=>this.update(text,record,index)} >查看</Button>
+                        <Button type="primary" danger size='small' onClick={()=>this.del(text,record,index)}> 删除</Button>
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
                     </Space>
                 )
             }
@@ -246,17 +265,28 @@ class TaskList extends React.Component {
             //搜索
             <div>
                 <Row>
+<<<<<<< HEAD
                     <Col span={24} style={{
                         marginBottom:"20px"
                     }}>
                         <Input  name='username'
                                 placeholder=" 请输入用户手机号查询"
                                 style={{ width: '200px', float: 'left' ,marginRight:"20px"}}
+=======
+                    <Col span={24}>
+                        <Input  name='username'
+                                placeholder=" 请输入用户手机号查询"
+                                style={{ width: '300px', float: 'left' }}
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
                                 onChange={this.selectNanme} />
                         <Input
                             name='username2'
                             placeholder="请输入用户昵称查询"
+<<<<<<< HEAD
                             style={{ width: '200px', float: 'left',marginRight:"20px" }}
+=======
+                            style={{ width: '300px', float: 'left' }}
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
                             onChange={this.selectNanme2} />
                         <Button shape="circle"
                                 icon={<SearchOutlined />}

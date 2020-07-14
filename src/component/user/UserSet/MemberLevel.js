@@ -1,6 +1,7 @@
 import React from 'react'
 import Axios from './../../../util/axios.js'
 import Api from './../../../api/index'
+<<<<<<< HEAD
 import {Table, Space, Button, Modal, Input, Row, Col, Switch, Pagination,Radio,Avatar} from 'antd';
 import {  UsergroupAddOutlined,DeleteOutlined  } from '@ant-design/icons';
 import { Upload, message } from 'antd';
@@ -31,6 +32,15 @@ const props = {
         }
     },
 };
+=======
+import {Table, Space, Button, Modal, Input, Row, Col, Switch, Pagination,Radio} from 'antd';
+// import { CloseOutlined, CheckOutlined } from '@ant-design/icons';
+import { Upload, message } from 'antd';
+import { LoadingOutlined, PlusOutlined } from '@ant-design/icons';
+import './MemberLevel.css';
+const { confirm } = Modal;
+const { TextArea } = Input;
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
 class MemberLevel extends React.Component {
     constructor(prors) {
         super(prors)
@@ -64,6 +74,10 @@ class MemberLevel extends React.Component {
             .then((res)=>{
                 console.log(res)
                 if(res.status===200){
+<<<<<<< HEAD
+=======
+                    console.log(res.data)
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
                     this.setState({
                         data : res.data,
                         total:res.count
@@ -89,7 +103,10 @@ class MemberLevel extends React.Component {
                 vip_moren: parseInt(this.state.switch),
                 vip_img_url:''
                 }) .then((res)=>{
+<<<<<<< HEAD
                 this.success(res.data.msg)
+=======
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
                 console.log(res)
                 console.log('添加成功')
                 this.setState({
@@ -170,6 +187,7 @@ class MemberLevel extends React.Component {
             },
         });
     }
+<<<<<<< HEAD
     error = (val) => {
         message.error(val);
     };
@@ -177,6 +195,8 @@ class MemberLevel extends React.Component {
     success = (val) => {
         message.success(val);
     };
+=======
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
     // 删除
     del(text,record,index){
         this.showDeleteConfirm(record)
@@ -184,10 +204,47 @@ class MemberLevel extends React.Component {
         console.log(text,record,index)
 
     }
+<<<<<<< HEAD
+=======
+  //  图片上传
+    getBase64(img, callback) {
+        const reader = new FileReader();
+        reader.addEventListener('load', () => callback(reader.result));
+        reader.readAsDataURL(img);
+    }
+
+    beforeUpload(file) {
+        const isJpgOrPng = file.type === 'image/jpeg' || file.type === 'image/png';
+        if (!isJpgOrPng) {
+            message.error('You can only upload JPG/PNG file!');
+        }
+        const isLt2M = file.size / 1024 / 1024 < 2;
+        if (!isLt2M) {
+            message.error('Image must smaller than 2MB!');
+        }
+        return isJpgOrPng && isLt2M;
+    }
+    handleChange = info => {
+        if (info.file.status === 'uploading') {
+            this.setState({ loadingg: true });
+            return;
+        }
+        if (info.file.status === 'done') {
+            // Get this url from response in real world.
+            this.getBase64(info.file.originFileObj, imageUrl =>
+                this.setState({
+                    imageUrl,
+                    loadingg: false,
+                }),
+            );
+        }
+    };
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
     //分页
     onChangeee = (page, pageSize) => {
         console.log('Page: ', page);
         console.log('pageSize: ', pageSize);
+<<<<<<< HEAD
         new Promise(resolve => {
             this.setState({
                 page: page,
@@ -197,10 +254,27 @@ class MemberLevel extends React.Component {
                 this.axios()
             }
         )
+=======
+        this.setState({
+            page: page,
+        })
+        this.axios()
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
     }
     //分页结束
   render() {
 
+<<<<<<< HEAD
+=======
+      //图片上传
+      const uploadButton = (
+          <div>
+              {this.state.loadingg ? <LoadingOutlined /> : <PlusOutlined />}
+              <div className="ant-upload-text">上传</div>
+          </div>
+      );
+      const { imageUrl } = this.state;
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
       //图片上传结束
       const { visible, loading } = this.state;
       const columns = [
@@ -231,20 +305,37 @@ class MemberLevel extends React.Component {
               title: '操作',
               dataIndex: 'address',
               render: (text, record,index) => (
+<<<<<<< HEAD
                   <Space >
                       <p  className='delHuiYuan'  onClick={()=>this.del(text,record,index)}><DeleteOutlined /></p>
+=======
+                  <Space size="middle">
+                      <Button type="primary" danger size='small' onClick={()=>this.del(text,record,index)}>删除</Button>
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
                   </Space>
               )
           }
       ];
     return (
         <div >
+<<<<<<< HEAD
            {/*<h1>会员等级设置</h1>*/}
            <div style={{textAlign:'right',marginBottom:'10px'}}>
                <div onClick={this.add.bind(this)}  className='addHuiYuan'> <UsergroupAddOutlined /></div>
            </div>
             <Table pagination={false} columns={columns} dataSource={this.state.data} />,
             <div >
+=======
+
+           <h1>会员等级设置</h1>
+            {/*pagination={false} //取消页码 true 显示页码*/}
+           {/*dataSource={data} //数据*/}
+           <div style={{textAlign:'right',marginBottom:'10px'}}>
+               <Button onClick={this.add.bind(this)} type='primary' size='middle'>添加会员等级</Button>
+           </div>
+            <Table pagination={false} columns={columns} dataSource={this.state.data}  scroll={{ y: 240 }} />,
+            <div className="grade">
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
                 <Modal
                     visible={visible}
                     width="60%"
@@ -318,11 +409,26 @@ class MemberLevel extends React.Component {
                                     <div>
                                         <TextArea ref='textarea' rows={4} cols={3} />
                                     </div>
+<<<<<<< HEAD
                                     <div style={{marginBottom:"40px",color:"blue",marginLeft:'10px',}}>
                                         {/*<Avatar src={imgurl}/>*/}
                                         <Upload {...props} >
                                                 {/*<UploadOutlined />*/}
                                                 上传图片
+=======
+                                    <div>
+                                        {/*图片上传*/}
+                                        <Upload
+                                            name="avatar"
+                                            listType="picture-card"
+                                            className="avatar-uploader"
+                                            showUploadList={false}
+                                            action="http://www.xiadachuan.cn/uploadfile.do"
+                                            beforeUpload={this.beforeUpload}
+                                            onChange={this.handleChange}
+                                        >
+                                            {imageUrl ? <img src={imageUrl} alt="avatar" style={{ width: '100%' }} /> : uploadButton}
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
                                         </Upload>
                                     </div>
                                 </Col>

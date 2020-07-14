@@ -1,20 +1,27 @@
 
 /*首页头部样式*/
 .indexHead{
+<<<<<<< HEAD
     /*background-color: black;*/
     background-image: linear-gradient(to bottom , rgba(36, 61, 137, 0.98), rgba(39, 72, 156, 0.98), #2c48b0);
 
+=======
+    background-color: #61dafb;
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
     color: white;
 }
 .contentColor{
     /*background-color: rgba(238,215,215,.1)*/
     background-color: #ABEAFD;
 }
+<<<<<<< HEAD
 .ant-layout-sider-children ul{
     /*background-color: rgba(12, 12, 12, 0.98);*/
     color: white;
     background-image: linear-gradient(to right , rgba(36, 61, 137, 0.98), rgba(39, 72, 156, 0.98), #2c48b0);
 }
+=======
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
 /*会员总览样式*/
 .userTotal{
     margin-top: 20px;
@@ -25,7 +32,11 @@
     /*border: 1px solid yellow;*/
     padding: 5px;
     /*background-color: rgba(47, 84, 235, 0.4);*/
+<<<<<<< HEAD
     border-radius: 10px;
+=======
+    border-radius: 3px;
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
     /*box-shadow: 10px 10px #ABEAFD;*/
     /*box-shadow:0 0 10px 5px rgba(111, 111, 111, 0.38),*/
     /*0 0 10px 5px #ABEAFD*/
@@ -42,5 +53,8 @@
 }
 .loginOut:hover{
     cursor: pointer;
+<<<<<<< HEAD
 
+=======
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
 }

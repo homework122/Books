@@ -205,7 +205,11 @@ class MemberListt extends React.Component {
                             listType="picture-card"
                             className="avatar-uploader"
                             showUploadList={false}
+<<<<<<< HEAD
                             action: "http://www.xiadachuan.cn/uploadfile.do"
+=======
+                            action="http://www.xiadachuan.cn/uploadfile.do"
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
                             beforeUpload={this.beforeUpload}
                             onChange={this.handleChange}
                         >

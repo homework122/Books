@@ -14,7 +14,11 @@ import {
     Pagination,
     message
 } from 'antd';
+<<<<<<< HEAD
 import {SearchOutlined,EditOutlined,EyeOutlined,CopyOutlined } from '@ant-design/icons';
+=======
+import {SearchOutlined} from '@ant-design/icons';
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
 import Axios from './../../../util/axios.js'
 import Api from './../../../api/index'
 // const { confirm } = Modal;
@@ -184,6 +188,7 @@ class MemberScores extends React.Component {
     }
     //分页
     onChangeee = (page,pageSize) => {
+<<<<<<< HEAD
         new Promise(resolve => {
             this.setState({
                 page: page,
@@ -193,6 +198,12 @@ class MemberScores extends React.Component {
                 this.axios()
             }
         )
+=======
+        this.setState({
+            page: page,
+        })
+        this.axios()
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
     }
     //分页结束
     //查询日期
@@ -282,9 +293,15 @@ class MemberScores extends React.Component {
               title: '操作',
               dataIndex: 'address',
               render: (text, record,index) => (
+<<<<<<< HEAD
                   <Space size="middle" className='mingxi'>
                     <span onClick={()=>this.mingxi(text,record,index)}><EyeOutlined /></span>
                     <span onClick={()=>this.xiugai(text,record,index)}><EditOutlined /></span>
+=======
+                  <Space size="middle">
+                    <span onClick={()=>this.mingxi(text,record,index)}>积分明细</span>
+                    <span onClick={()=>this.xiugai(text,record,index)}>修改</span>
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
                   </Space>
               )
           }
@@ -333,12 +350,20 @@ class MemberScores extends React.Component {
    },];
       return (
         <div>
+<<<<<<< HEAD
             {/*<h1>会员积分明细</h1>*/}
+=======
+            <h1>会员积分明细</h1>
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
             {/*查询*/}
             <div className='query'>
                 手机号： <Input ref='user_selfvx' placeholder="客服微信号" />
                 用户昵称：<Input ref='user_nickname' placeholder="用户昵称" />
+<<<<<<< HEAD
                 注册时间： <DatePicker  onChange={this.onChangeg} onOk={this.onOke} style={{width:'200px',marginLeft: '10px'}} />
+=======
+                注册时间： <DatePicker  onChange={this.onChangeg} onOk={this.onOke} style={{width:'250px',marginLeft: '10px'}} />
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
                 <Button shape="circle" icon={<SearchOutlined />} size='middle' onClick={this.chaxun} />
             </div>
             <div style={{textAlign:'left'}}>
@@ -348,15 +373,26 @@ class MemberScores extends React.Component {
                             会员列表
                         </p>
                     </Col>
+<<<<<<< HEAD
                     <Col span={3} offset={17} >
                         {/*<Button style={{marginRight:'30px'}}>批量删除</Button>*/}
                         <Button type="primary" onClick={this.add.bind(this)}><CopyOutlined />导出</Button>
+=======
+                    <Col span={18} offset={20} style={{marginTop:'-80px',marginRight:'30px'}}>
+                        {/*<Button style={{marginRight:'30px'}}>批量删除</Button>*/}
+                        <Button  onClick={this.add.bind(this)}>导出数据</Button>
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
                     </Col>
                 </Row>
 
             </div>
+<<<<<<< HEAD
             <Table pagination={false}  rowSelection={rowSelection} columns={columns} dataSource={this.state.data} />,
             <div>
+=======
+            <Table pagination={false}  rowSelection={rowSelection} columns={columns} dataSource={this.state.data}  scroll={{ y: 240 }} />,
+            <div className="grade">
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
                 {/*积分明细*/}
                 <Modal
                     visible={visible}
@@ -377,7 +413,11 @@ class MemberScores extends React.Component {
                         <Col span={24}>
                             <Row>
                                 <Col span={24}>
+<<<<<<< HEAD
                                     <Table pagination={false}  columns={jiFen} dataSource={this.state.jiFenData}  />
+=======
+                                    <Table pagination={false}  columns={jiFen} dataSource={this.state.jiFenData}  scroll={{ y: 240 }} />
+>>>>>>> e1abf3390ed26d4d410366c9f49f11273fd1b0ec
                                 </Col>
                             </Row>
                         </Col>
